@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#350C0C"
+    android:backgroundTint="@color/teal_700"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/work" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="137dp"
+        android:layout_height="35dp"
+        android:fontFamily="monospace"
+        android:text="@string/app_description"
+        android:textColor="#3C0E0E"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.243" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardLogin"
+        android:layout_width="364dp"
+        android:layout_height="102dp"
+        app:cardBackgroundColor="#79FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333">
+
+        <LinearLayout
+            android:layout_width="395dp"
+            android:layout_height="203dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/EmailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColor="#000000"
+                android:textColorHint="#37474F" />
+
+            <EditText
+                android:id="@+id/PasswordLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColor="#000000"
+                android:textColorHint="#37474F"
+                android:textColorLink="#000000" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/buttonregister"
+        android:layout_width="146dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="132dp"
+        android:text="REGISTRARSE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <ImageButton
+        android:id="@+id/twiter"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonregister"
+        app:srcCompat="@drawable/twiter" />
+
+    <ImageButton
+        android:id="@+id/facebook"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/buttonregister"
+        app:srcCompat="@drawable/jajaj" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="146dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="132dp"
+        android:text="@string/btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
