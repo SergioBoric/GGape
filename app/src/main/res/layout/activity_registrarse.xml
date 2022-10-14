@@ -16,10 +16,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="374dp"
-        android:layout_height="258dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="440dp"
+        android:layout_width="370dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="392dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3">
@@ -47,6 +47,24 @@
             android:backgroundTint="#000000"
             android:hint="Apellido"
             android:text="Apellido"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="18sp" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <EditText
+            android:id="@+id/editTextPhone5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone"
+            android:backgroundTint="#000000"
+            android:hint="numero"
+            android:text="Numero"
             android:textColor="#000000"
             android:textColorHint="#000000"
             android:textSize="18sp" />
