@@ -8,12 +8,6 @@
     android:backgroundTint="@color/teal_700"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/work" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="137dp"
@@ -52,11 +46,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp"
                 android:textColor="#000000"
-                android:textColorHint="#37474F" />
+                android:textColorHint="#37474F"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/PasswordLogin"
@@ -64,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:minHeight="48dp"
                 android:textColor="#000000"
@@ -80,27 +75,9 @@
         android:layout_height="70dp"
         android:layout_marginTop="320dp"
         android:layout_marginEnd="132dp"
-        android:text="REGISTRARSE"
+        android:text="@string/registrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
-
-    <ImageButton
-        android:id="@+id/twiter"
-        android:layout_width="59dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonregister"
-        app:srcCompat="@drawable/twiter" />
-
-    <ImageButton
-        android:id="@+id/facebook"
-        android:layout_width="59dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/buttonregister"
-        app:srcCompat="@drawable/jajaj" />
 
     <Button
         android:id="@+id/buttonLogin"
