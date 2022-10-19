@@ -6,7 +6,8 @@
         <entry key="..\:/Users/juanf/AndroidStudioProjects/testing/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_main2.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_main3.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_main3.xml" value="0.1" />
+        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_mis_datos.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_registrarse.xml" value="0.33" />
         <entry key="..\:/Users/xxelp/Desktop/Work-in-App-master/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.209" />
         <entry key="..\:/Users/xxelp/Desktop/Work-in-App-master/app/src/main/res/drawable/ic_launcher_background.xml" value="0.344" />
@@ -24,5 +25,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1675929884566054" />
+      </ProjectState>
+    </option>
   </component>
 </project>
