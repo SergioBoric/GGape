@@ -8,4 +8,18 @@
     <string name="todo">TODO</string>
 
 
+
+
+    <string name="uidDato">UID</string>
+    <string name="NombreDato">Nombre</string>
+    <string name="ApellidoDato">Apellido</string>
+    <string name="CorreoDato">Correo</string>
+    <string name="PasswordDato">Password</string>
+    <string name="EdadDato">Edad</string>
+    <string name="DireccionDato">Direccion</string>
+    <string name="TelefonoDato">Telefono</string>
+    <string name="ActualizarD">Actualizar Datos</string>
+    <string name="MisDatosTXT">Mis Datos Personales</string>
+
+
 </resources>
