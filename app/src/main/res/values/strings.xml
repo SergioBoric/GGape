@@ -4,9 +4,21 @@
     <string name="app_description">Login</string>
     <string name="invalid_mail">Ingrese mail valido</string>
     <string name="invalid_password">Ingrese un password mayor a 6 digitos</string>
+
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="registrarse">REGISTRARSE</string>
+
+    <string name="uidDato">UID</string>
+    <string name="NombreDato">Nombre</string>
+    <string name="ApellidoDato">Apellido</string>
+    <string name="CorreoDato">Correo</string>
+    <string name="PasswordDato">Password</string>
+    <string name="EdadDato">Edad</string>
+    <string name="DireccionDato">Direccion</string>
+    <string name="TelefonoDato">Telefono</string>
+    <string name="ActualizarD">Actualizar Datos</string>
+    <string name="MisDatosTXT">Mis Datos Personales</string>
 
 
 </resources>
