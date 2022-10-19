@@ -20,7 +20,7 @@
             android:name=".registrarse"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
+            android:name=".Opciones.MainActivity3"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
