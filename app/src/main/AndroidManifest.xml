@@ -28,7 +28,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Opciones.MainActivity3"
+            android:name=".MainActivity3"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
