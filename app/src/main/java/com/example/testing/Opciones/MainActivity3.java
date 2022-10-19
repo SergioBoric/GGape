@@ -10,7 +10,6 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.testing.MainActivity;
-import com.example.testing.MainActivity2;
 import com.example.testing.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -36,13 +35,7 @@ public class MainActivity3 extends AppCompatActivity {
         });
 
 
-        btni.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent2 = new Intent(MainActivity3.this, MainActivity2.class);
-                startActivity(intent2);
-            }
-        });
+
     }
 
     private void gologing(){

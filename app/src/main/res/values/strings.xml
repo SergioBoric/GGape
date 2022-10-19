@@ -19,6 +19,9 @@
     <string name="TelefonoDato">Telefono</string>
     <string name="ActualizarD">Actualizar Datos</string>
     <string name="MisDatosTXT">Mis Datos Personales</string>
+    <string name="cerrar_sesion">cerrar_sesion</string>
+    <string name="todo">todo</string>
+    <string name="ActualizarP">ActualizarP</string>
 
 
 </resources>
