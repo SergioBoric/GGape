@@ -36,9 +36,8 @@ public class Registro extends AppCompatActivity {
         setContentView(R.layout.activity_registro);
 
         ActionBar actionBar = getSupportActionBar();
-
         assert actionBar != null;
-        actionBar.setTitle("registrar");
+        actionBar.setTitle("Registrar");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 

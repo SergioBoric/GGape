@@ -10,9 +10,10 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/interfaz2"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/interfaz2" />
 
     <Button
         android:id="@+id/registrarse"
@@ -34,12 +35,12 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView3">
+        >
 
         <EditText
             android:id="@+id/Correo"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:backgroundTint="#000000"
             android:hint="Correo"
             android:textColor="#000000"
@@ -47,21 +48,21 @@
             android:textColorHint="#000000" />
 
         <Space
-            android:id="@+id/space"
+
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
         <EditText
             android:id="@+id/Password"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:backgroundTint="#000000"
-            android:hint="Pasword"
+            android:hint="Password"
             android:textColor="#000000"
             android:textColorHint="#000000" />
 
         <Space
-            android:id="@+id/space"
+
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
@@ -69,14 +70,14 @@
         <EditText
             android:id="@+id/Nombres"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:backgroundTint="#000000"
             android:hint="Nombres"
             android:textColor="#000000"
             android:textColorHint="#000000" />
 
         <Space
-            android:id="@+id/space"
+
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
@@ -84,42 +85,42 @@
         <EditText
             android:id="@+id/Apellidos"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:backgroundTint="#000000"
             android:hint="Apellidos"
             android:textColor="#000000"
             android:textColorHint="#000000" />
 
         <Space
-            android:id="@+id/space"
+
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
         <EditText
             android:id="@+id/Edad"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:backgroundTint="#000000"
             android:hint="Edad"
             android:textColor="#000000"
             android:textColorHint="#000000" />
 
         <Space
-            android:id="@+id/space"
+
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
         <EditText
             android:id="@+id/Telefono"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:backgroundTint="#000000"
             android:hint="Telefono"
             android:textColor="#000000"
             android:textColorHint="#000000" />
 
         <Space
-            android:id="@+id/space"
+
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
@@ -129,6 +130,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#000000"
             android:hint="Direccion"
+            android:minHeight="48dp"
             android:textColor="#000000"
             android:textColorHint="#000000" />
 
