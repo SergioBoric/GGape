@@ -77,9 +77,9 @@ public class MainActivity3 extends AppCompatActivity {
                     //Obtenemos los datos de firebase
                     String uid = ""+snapshot.child("uid").getValue();
                     String nombres = ""+snapshot.child("nombres").getValue();
-                    String apellidos = ""+snapshot.child("apelidos").getValue();
+                    String apellidos = ""+snapshot.child("apellidos").getValue();
                     String correo = ""+snapshot.child("correo").getValue();
-                    String password = ""+snapshot.child("password").getValue();
+                    String password = ""+snapshot.child("pass").getValue();
                     String direccion = ""+snapshot.child("direccion").getValue();
                     String edad = ""+snapshot.child("edad").getValue();
                     String telefono = ""+snapshot.child("telefono").getValue();
