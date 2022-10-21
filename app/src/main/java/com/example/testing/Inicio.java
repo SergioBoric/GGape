@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.testing.Opciones.MainActivity3;
+
 public class Inicio extends AppCompatActivity {
 
 
@@ -28,7 +30,7 @@ public class Inicio extends AppCompatActivity {
         btnp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Inicio.this,MainActivity3.class));
+                startActivity(new Intent(Inicio.this, MainActivity3.class));
 
             }
         });
