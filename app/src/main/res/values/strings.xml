@@ -20,6 +20,8 @@
     <string name="TelefonoDato">Telefono</string>
     <string name="ActualizarD">Actualizar Datos</string>
     <string name="MisDatosTXT">Mis Datos Personales</string>
+    <string name="ActualizarP">Actualizar Pass</string>
+
 
 
 </resources>
