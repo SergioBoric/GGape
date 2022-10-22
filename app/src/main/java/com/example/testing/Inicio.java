@@ -37,7 +37,7 @@ public class Inicio extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
-        actionBar.setTitle("Perfil");
+        actionBar.setTitle("Inicio");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
     }

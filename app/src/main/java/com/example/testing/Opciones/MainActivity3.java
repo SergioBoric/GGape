@@ -1,6 +1,7 @@
 package com.example.testing.Opciones;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -42,6 +43,12 @@ public class MainActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle("Perfil");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         ImagenDato = findViewById(R.id.imagenDato);
 
@@ -133,5 +140,12 @@ public class MainActivity3 extends AppCompatActivity {
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP /Intent.FLAG_ACTIVITY_CLEAR_TASK /Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
 
+    }
+
+    //Retrocede en navegation bar
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return super.onSupportNavigateUp();
     }
 }

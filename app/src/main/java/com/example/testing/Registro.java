@@ -124,4 +124,11 @@ public class Registro extends AppCompatActivity {
         });
     }
 
+    //Retrocede en navegation bar
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
+
 }
