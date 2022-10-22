@@ -13,8 +13,28 @@
 
     <string name="buttonperfil">Perfil</string>
 
-    <string name="imagenDato">a</string>
+    <!-- Inicio -->
+    <string name="uidtxt">UID: </string>
+    <string name="uidPerfil"> -- </string>
+    <string name="nombretxt">Nombre: </string>
+    <string name="nombrestxt">Nombres: </string>
+    <string name="correotxt">Correo:</string>
+    <string name="correoPerfil">Correo: </string>
 
+    <!-- Menu -->
+
+    <string name="MisDatosOpcion">Mis Datos</string>
+    <string name="CrearPublicacionOpcion">Crear Post</string>
+    <string name="PublicacionesOpciones">Publicaciones</string>
+    <string name="UsuarioOpciones">Usuarios</string>
+    <string name="ChatsOpcion">Chats</string>
+
+
+
+
+
+    <!-- Main3 -->
+    <string name="imagenDato">a</string>
     <string name="uidDato">UID</string>
     <string name="NombreDato">Nombre</string>
     <string name="ApellidoDato">Apellido</string>
