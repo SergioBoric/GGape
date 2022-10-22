@@ -16,12 +16,13 @@
     <!-- Inicio -->
     <string name="uidtxt">UID: </string>
     <string name="uidPerfil"> -- </string>
-    <string name="nombretxt">Nombre: </string>
     <string name="nombrestxt">Nombres: </string>
+    <string name="nombresPerfil"> -- </string>
     <string name="correotxt">Correo:</string>
-    <string name="correoPerfil">Correo: </string>
+    <string name="correoPerfil"> -- </string>
 
     <!-- Menu -->
+    <string name="foto_perfil">Correo: </string>
 
     <string name="MisDatosOpcion">Mis Datos</string>
     <string name="CrearPublicacionOpcion">Crear Post</string>
