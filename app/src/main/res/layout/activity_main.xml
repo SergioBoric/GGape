@@ -9,6 +9,14 @@
     android:backgroundTint="@color/teal_700"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/gape_login" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="137dp"
@@ -70,22 +78,22 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+
     <Button
         android:id="@+id/buttonregister"
         android:layout_width="146dp"
         android:layout_height="70dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="344dp"
         android:layout_marginEnd="132dp"
         android:text="@string/registrarse"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"/>
-
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="146dp"
         android:layout_height="70dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="244dp"
         android:layout_marginEnd="132dp"
         android:text="@string/btn"
         app:layout_constraintEnd_toEndOf="parent"
