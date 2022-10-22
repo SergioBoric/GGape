@@ -9,9 +9,20 @@
 
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="registrarse">REGISTRARSE</string>
 
     <string name="buttonperfil">Perfil</string>
+    
+    <!-- Main1 -->
+    <string name="login">login</string>
+    <string name="registrarse">REGISTRARSE</string>
+
+    <!-- Registro -->
+
+
+    <!-- Login -->
+    <string name="CorreoLogin">Correo electronico</string>
+    <string name="PasswordLogin">Contraseña</string>
+    <string name="INGRESAR">LOGIN </string>
 
     <!-- Inicio -->
     <string name="uidtxt">UID: </string>
@@ -30,9 +41,6 @@
     <string name="ChatsOpcion">Chats</string>
 
 
-
-
-
     <!-- Main3 -->
     <string name="imagenDato">a</string>
     <string name="uidDato">UID</string>
@@ -46,7 +54,6 @@
     <string name="ActualizarD">Actualizar Datos</string>
     <string name="MisDatosTXT">Mis Datos Personales</string>
     <string name="ActualizarP">Actualizar Pass</string>
-
 
 
 </resources>

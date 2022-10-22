@@ -13,21 +13,18 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     Button btnl,btnr;
-    EditText Elogin,Plogin;
-
-    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnl = findViewById(R.id.buttonLogin);
+        btnl = findViewById(R.id.login);
         btnr = findViewById(R.id.buttonregister);
 
         btnl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,Inicio.class));
+                startActivity(new Intent(MainActivity.this,login.class));
 
             }
         });

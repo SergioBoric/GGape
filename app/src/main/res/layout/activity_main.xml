@@ -9,94 +9,27 @@
     android:backgroundTint="@color/teal_700"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="146dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="404dp"
+        android:text="@string/login"
+        android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/gape_login" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="137dp"
-        android:layout_height="35dp"
-        android:fontFamily="monospace"
-        android:text="@string/app_description"
-        android:textColor="#3C0E0E"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.243" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardLogin"
-        android:layout_width="364dp"
-        android:layout_height="102dp"
-        app:cardBackgroundColor="#79FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333">
-
-        <LinearLayout
-            android:layout_width="395dp"
-            android:layout_height="203dp"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/EmailLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:minHeight="48dp"
-                android:textColor="#000000"
-                android:textColorHint="#37474F"
-                android:autofillHints="" />
-
-            <EditText
-                android:id="@+id/PasswordLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:minHeight="48dp"
-                android:textColor="#000000"
-                android:textColorHint="#37474F"
-                android:textColorLink="#000000" />
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/buttonregister"
         android:layout_width="146dp"
         android:layout_height="70dp"
-        android:layout_marginTop="344dp"
         android:layout_marginEnd="132dp"
+        android:layout_marginBottom="272dp"
         android:text="@string/registrarse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="146dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="132dp"
-        android:text="@string/btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
