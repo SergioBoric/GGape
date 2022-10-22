@@ -101,6 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:backgroundTint="#000000"
+            android:inputType="date"
             android:hint="Edad"
             android:textColor="#000000"
             android:textColorHint="#000000" />
@@ -115,6 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:backgroundTint="#000000"
+            android:inputType="phone"
             android:hint="Telefono"
             android:textColor="#000000"
             android:textColorHint="#000000" />
@@ -136,4 +138,5 @@
 
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
