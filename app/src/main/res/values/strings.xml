@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Work-in</string>
+    <string name="app_name" translatable="false">Ga-pe</string>
     <string name="btn" translatable="false">Ingresar</string>
     <string name="app_description">Login</string>
     <string name="invalid_mail">Ingrese mail valido</string>
