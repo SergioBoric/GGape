@@ -1,6 +1,6 @@
 package com.example.testing;
 
-import static com.example.testing.R.id.buttonperfil;
+import static com.example.testing.R.id.MisDatosOpcion;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +23,7 @@ public class Inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        btnp = findViewById(buttonperfil);
+        btnp = findViewById(MisDatosOpcion);
 
 
 

@@ -18,9 +18,10 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
-            android:layout_height="2000dp"
-            android:scaleType="center"/>
-            <!--android:src="@drawable/portada"-->
+            android:layout_height="200dp"
+            android:scaleType="center"
+            android:src="@drawable/portada"/>
+
 
         <!--Datos Recuperacion-->
 
@@ -67,8 +68,8 @@
                     <TextView
                         android:id="@+id/uidPerfil"
                         android:layout_width="wrap_content"
-                        android:text="@string/uidPerfil"
                         android:layout_height="wrap_content"
+                        android:text="@string/uidPerfil"
                         android:textColor="#000" />
 
 
@@ -127,38 +128,53 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
+                <!-- Mis Datos-->
 
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="80dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/datos"/>
+                        android:layout_gravity="center"
+                        android:src="@drawable/datos" />
+
                     <Button
+                        android:id="@+id/MisDatosOpcion"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:text="@string/MisDatosOpcion"
+                        android:textColor="#fff" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="80dp"
-                        android:layout_height="100dp" />
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/crear" />
+
                     <Button
+                        android:id="@+id/CrearPublicacionOpcion"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/CrearPublicacionOpcion"
+                        android:textColor="#fff" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -170,6 +186,35 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="2">
+
+                <!-- Publicaciones-->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/publicaciones" />
+
+                    <Button
+                        android:id="@+id/PublicacionesOpcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/PublicacionesOpciones"
+                        android:textColor="#fff" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- Usuarios -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -184,16 +229,6 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-        <Button
-            android:id="@+id/buttonperfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Button" />
 
 
 
