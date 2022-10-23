@@ -12,6 +12,16 @@
 
     <string name="buttonperfil">Perfil</string>
 
+
+    <!-- UsersDisplay -->
+
+    <string name="uidPerfilDis"> -- </string>
+    <string name="nombresPerfilDis"> -- </string>
+    <string name="correoPerfilDis"> -- </string>
+    <string name="especialistatxtDis">Especialista: </string>
+    <string name="especialistaPerfilDis"> -- </string>
+    <string name="emailEnviar"> Enviar Email </string>
+
     <!-- Main1 -->
     <string name="login">login</string>
     <string name="registrarse">REGISTRARSE</string>
