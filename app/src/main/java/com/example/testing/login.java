@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class login extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    Dialog dialog;
 
 
     @Override
@@ -46,6 +48,8 @@ public class login extends AppCompatActivity {
         INGRESAR = findViewById(R.id.INGRESAR);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(login.this);
+        dialog = new Dialog(login.this);
 
         INGRESAR.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +93,8 @@ public class login extends AppCompatActivity {
 
                         }else {
                             progressDialog.dismiss();
-                            Toast.makeText(login.this, "Algo ha salido mal", Toast.LENGTH_SHORT).show();
+                            Dialog_No_Inicio();
+                            //Toast.makeText(login.this, "Algo ha salido mal", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -101,10 +106,34 @@ public class login extends AppCompatActivity {
                 });
     }
 
+    private void Dialog_No_Inicio(){
+
+        Button ok_no_inicio;
+
+        dialog.setContentView(R.layout.no_sesion);
+
+        ok_no_inicio = dialog.findViewById(R.id.ok_no_inicio);
+
+        ok_no_inicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
     @Override
     public boolean onSupportNavigateUp(){
         onBackPressed();
         return super.onSupportNavigateUp();
     }
+
+
+
+
+
+
 
 }

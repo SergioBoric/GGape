@@ -40,6 +40,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.1.0'
     implementation 'com.google.firebase:firebase-storage:20.1.0'
     implementation 'com.google.firebase:firebase-messaging:23.1.0'
+    implementation 'com.airbnb.android:lottie:3.0.1'
+
 
     /* auth, databse, storage ya estan  */
 

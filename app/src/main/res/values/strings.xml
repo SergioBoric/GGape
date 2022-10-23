@@ -24,6 +24,10 @@
     <string name="PasswordLogin">Contraseña</string>
     <string name="INGRESAR">LOGIN </string>
 
+    <!-- Dialogo no inicio de cecion -->
+    <string name="Noinicio">No pudo iniciar sesion, intente nuevamente </string>
+    <string name="ok_no_inicio">Entendido</string>
+
     <!-- Inicio -->
     <string name="uidtxt">UID: </string>
     <string name="uidPerfil"> -- </string>
