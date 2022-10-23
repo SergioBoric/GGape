@@ -30,8 +30,7 @@ public class MainActivity3 extends AppCompatActivity {
 
     ImageView ImagenDato;
     TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, DireccionDato, TelefonoDato;
-    Button ActualizarD, ActualizarP, btnc;
-    ImageButton btni;
+    Button ActualizarD, ActualizarP;
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
@@ -63,8 +62,6 @@ public class MainActivity3 extends AppCompatActivity {
 
         ActualizarD = findViewById(R.id.ActualizarD);
         ActualizarP = findViewById(R.id.ActualizarP);
-        btni = findViewById(R.id.start);
-        btnc = findViewById(R.id.cerrar);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -106,10 +103,10 @@ public class MainActivity3 extends AppCompatActivity {
                     //Obtener imagen
                     try {
                         //SI EXiste Imagen
-                        Picasso.get().load(imagen).placeholder(R.drawable.gonzalo).into(ImagenDato);
+                        Picasso.get().load(imagen).placeholder(R.drawable.img_perfil).into(ImagenDato);
                     }catch (Exception e){
                         //Si no existe Imagen
-                        Picasso.get().load(R.drawable.gonzalo).into(ImagenDato);
+                        Picasso.get().load(R.drawable.img_perfil).into(ImagenDato);
                     }
                 }
             }
@@ -121,15 +118,6 @@ public class MainActivity3 extends AppCompatActivity {
         });
 
 
-
-        btnc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(MainActivity3.this, "Sesion cerrada", Toast.LENGTH_SHORT).show();
-                gologing();
-            }
-        });
 
 
 

@@ -2,6 +2,7 @@ package com.example.testing;
 
 import static com.example.testing.R.id.MisDatosOpcion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,8 +18,13 @@ import android.widget.Toast;
 import com.example.testing.Opciones.MainActivity3;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class Inicio extends AppCompatActivity {
 
@@ -94,6 +100,7 @@ public class Inicio extends AppCompatActivity {
         private void VerificacionInicioSesion(){
             //SI el Usuario ha iniciado Sesion nos direge directamente a estas actividad
             if(firebaseUser != null){
+                CargarDatos();
                 Toast.makeText(this,"Se ha iniciado sesión", Toast.LENGTH_SHORT).show();
 
 
@@ -105,6 +112,55 @@ public class Inicio extends AppCompatActivity {
             }
         }
 
+        //Metodo para recuperar datos de firebase
+
+        private void CargarDatos(){
+            Query query = BASE_DE_DATOS.orderByChild("correo").equalTo(firebaseUser.getEmail());
+            query.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    //Recorremos los usuarios, Registrados en la base de datos
+                    //Hasta encontrar el usuario actual
+                    for (DataSnapshot ds: snapshot.getChildren()){
+
+                        /*Obtenemos los valores */
+                        String uid = ""+ds.child("uid").getValue();
+                        String correo = ""+ds.child("correo").getValue();
+                        String nombres = ""+ds.child("nombres").getValue();
+                        String imagen = ""+ds.child("imagen").getValue();
+
+
+                        /* Seteamos los datos en nuestra vista */
+                        uidPerfil.setText(uid);
+                        correoPerfil.setText(correo);
+                        nombresPerfil.setText(nombres);
+
+                        /* Declaramos try catch, para foto de perfil*/
+
+                        try {
+                            /*SI existe la imagen*/
+                            Picasso.get().load(imagen).placeholder(R.drawable.img_perfil).into(foto_perfil);
+                        }catch (Exception e){
+                            /*SI el user no tiene imagen*/
+
+                            Picasso.get().load(R.drawable.img_perfil).into(foto_perfil);
+
+                        }
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
+
+
+
+        //Metodo Cerra sesion
         private void CerraSesion (){
             firebaseAuth.signOut(); //Cierre sesion del usuario activo actualmente en la app
             Toast.makeText(this, "Ha cerrado sesion", Toast.LENGTH_SHORT).show();
