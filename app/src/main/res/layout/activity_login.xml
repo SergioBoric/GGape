@@ -45,7 +45,8 @@
                 android:hint="@string/CorreoLogin"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:textColorHint="#fff"
+                android:textColorHint="#000"
+                android:textColor="#000"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -67,7 +68,8 @@
                 android:hint="@string/PasswordLogin"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:textColorHint="#fff"
+                android:textColorHint="#000"
+                android:textColor="#000"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
