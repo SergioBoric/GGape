@@ -13,7 +13,7 @@ public class PantallaDeCarga extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_de_carga);
 
-        final int Duracion = 1000; //Tiempo
+        final int Duracion = 3000; //Tiempo
 
         new Handler().postDelayed(new Runnable() {
             @Override

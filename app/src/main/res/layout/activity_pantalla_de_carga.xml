@@ -13,11 +13,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
-        
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/logo"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="pantaa_carga.json"
+            app:lottie_imageAssetsFolder="assets" />
         
         <TextView
             android:text="@string/app_name"
