@@ -4,7 +4,7 @@
     <string name="app_description">Login</string>
     <string name="invalid_mail">Ingrese mail valido</string>
     <string name="invalid_password">Ingrese un password mayor a 6 digitos</string>
-    <string name="cerrar_sesion">cerrar sesion</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
     <string name="todo">TODO</string>
 
     <string name="email">Email</string>
@@ -38,7 +38,7 @@
     <string name="MisDatosOpcion">Mis Datos</string>
     <string name="CrearPublicacionOpcion">Crear Post</string>
     <string name="PublicacionesOpciones">Publicaciones</string>
-    <string name="UsuarioOpciones">Usuarios</string>
+    <string name="UsuarioOpciones">Maestros</string>
     <string name="ChatsOpcion">Chats</string>
 
 
