@@ -15,6 +15,14 @@
 
     <!-- UsersDisplay -->
 
+
+    <string name="Estadotxt">Estado: </string>
+    <string name="EstadotxtD"> -- </string>
+    <string name="Direcciontxt">Direccion:  </string>
+    <string name="DirecciontxtD"> -- </string>
+
+
+    <string name="foto_perfil_dis"> </string>
     <string name="uidPerfilDis"> -- </string>
     <string name="nombresPerfilDis"> -- </string>
     <string name="correoPerfilDis"> -- </string>

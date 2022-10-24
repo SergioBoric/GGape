@@ -38,7 +38,7 @@ public class Inicio extends AppCompatActivity {
     ImageView foto_perfil;
     TextView uidPerfil,correoPerfil,nombresPerfil;
 
-    Button btnp, CerraSesion;
+    Button btnp, CerraSesion, UsuarioOpcion;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -63,6 +63,8 @@ public class Inicio extends AppCompatActivity {
 
         CerraSesion = findViewById(R.id.CerraSesion);
         btnp = findViewById(MisDatosOpcion);
+        UsuarioOpcion = findViewById(R.id.UsuarioOpcion);
+
 
         CerraSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +82,15 @@ public class Inicio extends AppCompatActivity {
 
             }
         });
+
+        UsuarioOpcion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Inicio.this, DisplayMaestros.class));
+
+            }
+        });
+
 
     }
 

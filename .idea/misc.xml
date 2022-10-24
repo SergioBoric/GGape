@@ -4,14 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/juanf/AndroidStudioProjects/testing/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_inicio.xml" value="0.22" />
+        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_display_maestros.xml" value="0.1" />
+        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_inicio.xml" value="0.3075684380032206" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_main2.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_main3.xml" value="0.25" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_mis_datos.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_registrarse.xml" value="0.33" />
-        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/user_displayed_layout.xml" value="0.33" />
+        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/activity_registro_maestro.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/no_sesion.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/juanf/Desktop/GGape/app/src/main/res/layout/user_displayed_layout.xml" value="0.22" />
         <entry key="..\:/Users/xxelp/Desktop/Work-in-App-master/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.209" />
         <entry key="..\:/Users/xxelp/Desktop/Work-in-App-master/app/src/main/res/drawable/ic_launcher_background.xml" value="0.344" />
         <entry key="..\:/Users/xxelp/Desktop/Work-in-App-master/app/src/main/res/layout/activity_main.xml" value="0.33" />
