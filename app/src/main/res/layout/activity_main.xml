@@ -15,10 +15,16 @@
         android:layout_width="332dp"
         android:layout_height="300dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="380dp"
+        android:foregroundGravity="center"
         android:src="@drawable/gapee"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.685" />
 
     <Button
         android:id="@+id/registrarseM"
@@ -37,8 +43,8 @@
         android:id="@+id/login"
         android:layout_width="146dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="288dp"
         android:background="@drawable/boton_p"
         android:text="@string/login"
         android:textColor="#000"
@@ -49,7 +55,7 @@
         android:id="@+id/loginM"
         android:layout_width="146dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="248dp"
+        android:layout_marginEnd="220dp"
         android:layout_marginBottom="288dp"
         android:background="@drawable/boton_p"
         android:text="@string/loginM"

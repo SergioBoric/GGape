@@ -1,10 +1,13 @@
 package com.example.testing.Opciones;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +18,8 @@ import android.widget.Toast;
 
 import com.example.testing.MainActivity;
 import com.example.testing.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +27,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
 
 
 public class MainActivity3 extends AppCompatActivity {
@@ -30,12 +41,16 @@ public class MainActivity3 extends AppCompatActivity {
 
     ImageView ImagenDato;
     TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, DireccionDato, TelefonoDato;
-    Button ActualizarD, ActualizarP;
+    Button ActualizarD, ActualizarP, ActualizarIm;
+
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
     DatabaseReference BASE_DE_DATOS;
+
+    private static final int COD_SEL_IMAGE = 300;
+
 
 
     @Override
@@ -49,7 +64,6 @@ public class MainActivity3 extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        ImagenDato = findViewById(R.id.imagenDato);
 
         uidDato = findViewById(R.id.uidDato);
         NombreDato = findViewById(R.id.NombreDato);
@@ -65,6 +79,9 @@ public class MainActivity3 extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
+
+        ImagenDato = findViewById(R.id.imagenDato);
+        ActualizarIm = findViewById(R.id.ActualizarIm);
 
         BASE_DE_DATOS = FirebaseDatabase.getInstance().getReference( "USUARIOS_DE_APP" );
 

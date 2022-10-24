@@ -10,10 +10,13 @@
     android:layout_height="match_parent"
     >
 
+
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,6 +44,20 @@
             tools:layout_editor_absoluteY="91dp"
             tools:ignore="MissingConstraints"
             android:contentDescription="@string/todo" />
+
+            <Button
+                android:id="@+id/ActualizarIm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/boton_p"
+                android:textColor="#000"
+                android:text="@string/ActualizarIm"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/uidDato"
@@ -191,7 +208,7 @@
                 android:background="@drawable/boton_p"
                 android:textColor="#000"
                 android:text="@string/ActualizarP"
-
+                android:layout_gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.07"
