@@ -38,9 +38,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.nombresPerfilDis.setText(usuariosList.get(position).getNombre());
-        holder.EstadotxtD.setText(usuariosList.get(position).getNombre());
-        holder.DirecciontxtD.setText(usuariosList.get(position).getNombre());
-        holder.especialistaPerfilDis.setText(usuariosList.get(position).getNombre());
+        holder.EstadotxtD.setText(usuariosList.get(position).getEstado());
+        holder.DirecciontxtD.setText(usuariosList.get(position).getId());
+        holder.especialistaPerfilDis.setText(usuariosList.get(position).getEspecialidad());
         //img holder.nombresPerfilDis.setText(usuariosList.get(position).getNombre());
 
 

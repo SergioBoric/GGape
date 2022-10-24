@@ -43,7 +43,7 @@ public class DisplayUsuarios extends AppCompatActivity {
         List<User> userList = new ArrayList<>();
 
         for (int i = 0; i < 20; i++) {
-            userList.add(new User(i,"juan","Herrero","Linea"));
+            userList.add(new User(+i,"uan","Herrero","Linea"));
         }
 
         userAdapter = new UserAdapter(userList,this);
