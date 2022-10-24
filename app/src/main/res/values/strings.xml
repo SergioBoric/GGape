@@ -23,10 +23,23 @@
     <string name="emailEnviar"> Enviar Email </string>
 
     <!-- Main1 -->
-    <string name="login">login</string>
-    <string name="registrarse">REGISTRARSE</string>
+    <string name="login">LOGIN</string>
+    <string name="registrarse">REGISTRARSE COMO USUARIO</string>
+    <string name="registrarseM">REGISTRARSE COMO MAESTRO</string>
 
     <!-- Registro -->
+
+    <!-- Registro2 -->
+    <string name="RegistroTXT">REGISTRO</string>
+    <string name="Correo">Escriba correo</string>
+    <string name="Password">Escriba contraseña</string>
+    <string name="Nombres">Nombres Completo</string>
+    <string name="Apellidos">Apellidos</string>
+    <string name="Edad">Edad</string>
+    <string name="Telefono">Telefono</string>
+    <string name="Direccion">Direccion</string>
+    <string name="Rut">Rut</string>
+    <string name="REGISTRARUSUARIO">REGISTRARME</string>
 
 
     <!-- Login -->
@@ -69,6 +82,10 @@
     <string name="ActualizarD">Actualizar Datos</string>
     <string name="MisDatosTXT">Mis Datos Personales</string>
     <string name="ActualizarP">Actualizar Pass</string>
+
+    <!--Cambio de contraseña-->
+    <string name="MisCredencialesTXT">Mis Credenciales</string>
+    <string name="CorreoActualTXT">Correo Actual</string>
 
 
 </resources>
