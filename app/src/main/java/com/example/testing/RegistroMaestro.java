@@ -111,7 +111,7 @@ public class RegistroMaestro extends AppCompatActivity {
                             DatabaseReference reference = database.getReference("Maestros_DE_APP");
                             reference.child(uid).setValue(DatosUsuario);
                             Toast.makeText(RegistroMaestro.this, "SE registro exitosamente", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegistroMaestro.this,Inicio.class));
+                            startActivity(new Intent(RegistroMaestro.this,Inicio_Maestros.class));
 
                         }else {
                             Toast.makeText(RegistroMaestro.this,"Algo ha salido mal" ,Toast.LENGTH_SHORT).show();

@@ -31,7 +31,8 @@
     <string name="emailEnviar"> Enviar Email </string>
 
     <!-- Main1 -->
-    <string name="login">LOGIN</string>
+    <string name="login">LOGIN Usuario</string>
+    <string name="loginM">Login Maestro</string>
     <string name="registrarse">REGISTRARSE COMO USUARIO</string>
     <string name="registrarseM">REGISTRARSE COMO MAESTRO</string>
 
@@ -66,6 +67,13 @@
     <string name="nombresPerfil"> -- </string>
     <string name="correotxt">Correo:</string>
     <string name="correoPerfil"> -- </string>
+
+    <!-- InicioMaestro -->
+
+    <string name="MuidPerfil"> -- </string>
+    <string name="MnombresPerfil"> -- </string>
+    <string name="McorreoPerfil"> -- </string>
+    <string name="MaestroOpcion">Usuarios</string>
 
     <!-- Menu -->
     <string name="foto_perfil">Correo: </string>

@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnl,btnr,btnm;
+    Button btnl,btnr,btnm, btnlm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnl = findViewById(R.id.login);
         btnr = findViewById(R.id.buttonregister);
         btnm = findViewById(R.id.registrarseM);
+        btnlm = findViewById(R.id.loginM);
 
         btnm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,login.class));
+
+            }
+        });
+        btnlm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,LoginMaestros.class));
 
             }
         });
