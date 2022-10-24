@@ -22,6 +22,8 @@
         android:layout_marginEnd="136dp"
         android:layout_marginBottom="140dp"
         android:text="registrar"
+        android:textColor="#000"
+        android:background="@drawable/boton_p"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout" />
 

@@ -10,14 +10,24 @@
     tools:context=".MainActivity">
 
 
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageFilterView"
+        android:layout_width="332dp"
+        android:layout_height="300dp"
+        android:src="@drawable/gapee"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="28dp" />
+
     <Button
         android:id="@+id/registrarseM"
-        android:hint="@string/registrarseM"
         android:layout_width="146dp"
         android:layout_height="70dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="208dp"
-        android:textColor="#fff"
+        android:layout_marginBottom="96dp"
+        android:hint="@string/registrarseM"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:background="@drawable/boton_p"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -26,9 +36,10 @@
         android:layout_width="146dp"
         android:layout_height="70dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="464dp"
+        android:layout_marginBottom="288dp"
         android:text="@string/login"
-        android:textColor="#fff"
+        android:textColor="#000"
+        android:background="@drawable/boton_p"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -37,9 +48,10 @@
         android:layout_width="146dp"
         android:layout_height="70dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="332dp"
+        android:layout_marginBottom="196dp"
         android:text="@string/registrarse"
-        android:textColor="#fff"
+        android:textColor="#000"
+        android:background="@drawable/boton_p"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
