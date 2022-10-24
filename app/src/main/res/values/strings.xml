@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Ga-pe</string>
+    <string name="app_name" translatable="false">Gape Hogar</string>
     <string name="btn" translatable="false">Ingresar</string>
     <string name="app_description">Login</string>
     <string name="invalid_mail">Ingrese mail valido</string>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#350C0C"
     android:backgroundTint="@color/teal_700"
-    tools:context=".MainActivity">
+    tools:context="app.dominio.testing.MainActivity">
 
 
     <androidx.constraintlayout.utils.widget.ImageFilterView

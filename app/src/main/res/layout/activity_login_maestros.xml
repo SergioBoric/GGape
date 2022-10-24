@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E47615"
-    tools:context=".login">
+    tools:context="app.dominio.testing.login">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#fff"
-                android:drawableStart="@drawable/user_ico"
+
                 android:drawablePadding="5dp"
                 android:hint="@string/CorreoLogin"
                 android:importantForAutofill="no"
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#fff"
-                android:drawableStart="@drawable/pass_ico"
+
                 android:drawablePadding="5dp"
                 android:hint="@string/PasswordLogin"
                 android:importantForAutofill="no"

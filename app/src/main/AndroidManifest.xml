@@ -9,57 +9,56 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_gape"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_gape"
+
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat"
         tools:targetApi="31">
         <activity
-            android:name=".LoginMaestros"
+            android:name="app.dominio.testing.LoginMaestros"
             android:exported="false" />
         <activity
-            android:name=".DisplayUsuarios"
+            android:name="app.dominio.testing.DisplayUsuarios"
             android:exported="false" />
         <activity
-            android:name=".Inicio_Maestros"
+            android:name="app.dominio.testing.Inicio_Maestros"
             android:exported="false" />
         <activity
-            android:name=".RegistroMaestro"
+            android:name="app.dominio.testing.RegistroMaestro"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".DisplayMaestros"
+            android:name="app.dominio.testing.DisplayMaestros"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name="app.dominio.testing.login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Opciones.MainActivity3"
+            android:name="app.dominio.testing.Opciones.MainActivity3"
             android:exported="false" />
         <activity
-            android:name=".Registro"
+            android:name="app.dominio.testing.Registro"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Inicio"
+            android:name="app.dominio.testing.Inicio"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="app.dominio.testing.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
