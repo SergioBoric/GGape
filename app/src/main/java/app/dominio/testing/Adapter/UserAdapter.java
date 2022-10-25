@@ -13,58 +13,57 @@ import androidx.recyclerview.widget.RecyclerView;
 import app.dominio.testing.Model.User;
 import com.example.testing.R;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder>{
 
-    private List<User> usuariosList;
-    private Context context;
+    Context context;
 
-    public UserAdapter(List<User> usuariosList, Context context) {
-        this.usuariosList = usuariosList;
+    ArrayList<User> list;
+
+    public UserAdapter(Context context, ArrayList<User> list) {
         this.context = context;
+        this.list = list;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_displayed_layout,parent,false);
-        return new ViewHolder(view);
+    public UserAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.user_displayed_layout,parent,false);
+        return new MyViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.nombresPerfilDis.setText(usuariosList.get(position).getNombre());
-        holder.EstadotxtD.setText(usuariosList.get(position).getEstado());
-        holder.DirecciontxtD.setText(usuariosList.get(position).getId());
-        holder.especialistaPerfilDis.setText(usuariosList.get(position).getEspecialidad());
-        //img holder.nombresPerfilDis.setText(usuariosList.get(position).getNombre());
+    public void onBindViewHolder(@NonNull UserAdapter.MyViewHolder holder, int position) {
 
+        User user = list.get(position);
 
+        holder.nombres.setText((user.getNombres()));
+        holder.apellido.setText(user.getApellido());
+        holder.correo.setText(user.getCorreo());
+        holder.edad.setText(user.getEdad());
     }
 
     @Override
     public int getItemCount() {
-        return usuariosList.size();
+        return list.size();
     }
 
-
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-
-        private ImageView foto_perfil_dis;
-        private TextView EstadotxtD;
-        private TextView DirecciontxtD;
-        private TextView nombresPerfilDis;
-        private TextView especialistaPerfilDis;
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
 
 
-        public ViewHolder(@NonNull View itemView) {
+        TextView nombres, apellido, correo, edad, img;
+
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            foto_perfil_dis = itemView.findViewById(R.id.foto_perfil_dis);
-            EstadotxtD = itemView.findViewById(R.id.EstadotxtD);
-            DirecciontxtD = itemView.findViewById(R.id.DirecciontxtD);
-            nombresPerfilDis = itemView.findViewById(R.id.nombresPerfilDis);
-            especialistaPerfilDis = itemView.findViewById(R.id.especialistaPerfilDis);
+
+            nombres = itemView.findViewById(R.id.nombresPerfilDis);
+            apellido = itemView.findViewById((R.id.especialistaPerfilDis));
+            correo = itemView.findViewById(R.id.DirecciontxtD);
+            edad = itemView.findViewById(R.id.EstadotxtD);
+            //img = itemView.findViewById(R.id.foto_perfil_dis);
         }
     }
 }

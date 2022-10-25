@@ -2,63 +2,25 @@ package app.dominio.testing.Model;
 
 public class User {
 
-    private int id;
-    private String nombre;
-    private String especialidad;
-    private String estado;
+    String nombres, apellido, correo, edad, img;
 
-
-    public User(int id, String nombre, String especialidad, String estado) {
-        this.id = id;
-        this.nombre = nombre;
-        this.especialidad = especialidad;
-        this.estado = estado;
+    public String getNombres() {
+        return nombres;
     }
 
-    public User(int id) {
-        this.id = id;
+    public String getApellido() {
+        return apellido;
     }
 
-    public int getId() {
-        return id;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getEdad() {
+        return edad;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", especialidad='" + especialidad + '\'' +
-                ", estado='" + estado + '\'' +
-                '}';
+    public String getImg() {
+        return img;
     }
 }
