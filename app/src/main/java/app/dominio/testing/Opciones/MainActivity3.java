@@ -1,3 +1,5 @@
+
+
 package app.dominio.testing.Opciones;
 
 import androidx.annotation.NonNull;
@@ -43,11 +45,16 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
-
 public class MainActivity3 extends AppCompatActivity {
 
     TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, DireccionDato, TelefonoDato;
     private Button ActualizarIm,ActualizarD, ActualizarP,SubirFoto;
+    private ImageView imageView;
+    private ProgressBar progressBar;
+    private DatabaseReference root = FirebaseDatabase.getInstance().getReference("imagen");
+    private StorageReference reference = FirebaseStorage.getInstance().getReference();
+    private Uri imageUri;
+
 
 
     ProgressDialog progressDialog;
@@ -88,6 +95,37 @@ public class MainActivity3 extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
+        imageView = findViewById(R.id.imagenDato);
+        ActualizarIm = findViewById(R.id.ActualizarIm);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent , 2);
+
+            }
+        });
+
+        ActualizarIm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (imageUri != null){
+                    uploadToFirebase(imageUri);
+                }else{
+                    Toast.makeText(MainActivity3.this, "Please Selec Image", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+
+
+
+
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
 
@@ -116,7 +154,7 @@ public class MainActivity3 extends AppCompatActivity {
                     String imagen = ""+snapshot.child("imagen").getValue();
 
 
-                //Seteamos los datos en los TextView e ImageView
+                    //Seteamos los datos en los TextView e ImageView
 
                     uidDato.setText(uid);
                     NombreDato.setText(nombres);
@@ -148,12 +186,23 @@ public class MainActivity3 extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode ==2 && resultCode == RESULT_OK && data != null){
+
+            imageUri = data.getData();
+            imageView.setImageURI(imageUri);
+        }
+
+    }
+
     private void uploadToFirebase(Uri uri){
 
         StorageReference fileRef = reference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
-        fileRef.putFile(uri).addOnCompleteListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
+        fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onSucesse(UploadTask.TaskSnapshot taskSnapshot){
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
@@ -185,7 +234,6 @@ public class MainActivity3 extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cr.getType(mUri));
 
     }
-
 
 
     private void gologing(){
