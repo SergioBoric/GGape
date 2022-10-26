@@ -151,7 +151,16 @@ public class MainActivity3 extends AppCompatActivity {
                     String direccion = ""+snapshot.child("direccion").getValue();
                     String edad = ""+snapshot.child("edad").getValue();
                     String telefono = ""+snapshot.child("telefono").getValue();
-                    String imagen = ""+snapshot.child("imagen").getValue();
+                    String ImageView = ""+snapshot.child("imagen").getValue();
+
+                    //Obtener imagen
+                    try {
+                        //SI EXiste Imagen
+                        Picasso.get().load(ImageView).placeholder(R.drawable.gonzalo).into(imageView);
+                    }catch (Exception e){
+                        //Si no existe Imagen
+                        Picasso.get().load(R.drawable.gonzalo).into(imageView);
+                    }
 
 
                     //Seteamos los datos en los TextView e ImageView
@@ -208,8 +217,8 @@ public class MainActivity3 extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
 
                         ImgModel model = new ImgModel(uri.toString());
-                        String modelId = root.push().getKey();
-                        root.child(modelId).setValue(model);
+                        String modelId = BASE_DE_DATOS.push().getKey();
+                        BASE_DE_DATOS.child(modelId).setValue(model);
 
                         Toast.makeText(MainActivity3.this, "Exito", Toast.LENGTH_SHORT).show();
                     }

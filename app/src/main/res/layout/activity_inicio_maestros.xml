@@ -12,23 +12,121 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Chats -->
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/ChatsOpcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/boton_p"
+                        android:text="@string/ChatsOpcion"
+                        android:textColor="#000" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- Chats -->
+
+
+                <!-- Logout -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/CerraSesion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/boton_p"
+                        android:text="@string/cerrar_sesion"
+                        android:textColor="#000" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/PublicacionesOpcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/boton_p"
+                        android:text="@string/PublicacionesOpciones"
+                        android:textColor="#000" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <!-- Publicaciones-->
+
+                <!-- Usuarios -->
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+
+                    <Button
+                        android:id="@+id/MisDatosOpcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/boton_p"
+                        android:text="@string/MisDatosOpcion"
+                        android:textColor="#000" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <!-- Mis Datos-->
+
+
+                <!-- Logout -->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </LinearLayout>
+
+
+
+
+
+
 
         <!--Fondo De portada -->
 
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="center"
-            android:src="@drawable/portada" />
+
 
 
         <!--Datos Recuperacion-->
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -135,52 +233,6 @@
                 <!-- Mis Datos-->
 
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="80dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/datos" />
-
-                    <Button
-                        android:id="@+id/MisDatosOpcion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/boton_p"
-                        android:text="@string/MisDatosOpcion"
-                        android:textColor="#000" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-                <!-- Mis Datos-->
-
-                <!-- Crear Publicaciones-->
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="80dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/crear" />
-
-                    <Button
-                        android:id="@+id/CrearPublicacionOpcion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/CrearPublicacionOpcion"
-                        android:background="@drawable/boton_p"
-                        android:textColor="#000" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
                 <!-- Crear Publicaciones-->
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -191,123 +243,65 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="1">
 
                 <!-- Publicaciones-->
+
+                <!-- Crear Publicaciones-->
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="80dp"
-                        android:layout_height="100dp"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
                         android:layout_gravity="center"
-                        android:src="@drawable/publicaciones" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/crear" />
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/crear" />
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/crear" />
+
+                    </LinearLayout>
+
+
 
                     <Button
-                        android:id="@+id/PublicacionesOpcion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/PublicacionesOpciones"
-                        android:background="@drawable/boton_p"
-                        android:textColor="#000" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-                <!-- Publicaciones-->
-
-                <!-- Usuarios -->
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="80dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/usuarios" />
-
-                    <Button
-                        android:id="@+id/MaestroOpcion"
+                        android:id="@+id/CrearPublicacionOpcion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:background="@drawable/boton_p"
-                        android:text="@string/MaestroOpcion"
+                        android:text="@string/SubirFoto"
                         android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
                 <!-- Usuarios -->
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!--OPcion 5-6-->
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <!-- Chats -->
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="80dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/chat" />
-
-                    <Button
-                        android:id="@+id/ChatsOpcion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/ChatsOpcion"
-                        android:background="@drawable/boton_p"
-                        android:textColor="#000" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <!-- Chats -->
 
 
-                <!-- Logout -->
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="80dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/salir_app" />
-
-                    <Button
-                        android:id="@+id/CerraSesion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/cerrar_sesion"
-                        android:background="@drawable/boton_p"
-                        android:textColor="#000" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-                <!-- Logout -->
-            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
 
 
     </RelativeLayout>

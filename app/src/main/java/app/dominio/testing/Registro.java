@@ -95,6 +95,7 @@ public class Registro extends AppCompatActivity {
                             String telefono = Telefono.getText().toString();
                             String direccion = Direccion.getText().toString();
 
+
                             HashMap<Object,String> DatosUsuario = new HashMap<>();
 
                             DatosUsuario.put("uid", uid );

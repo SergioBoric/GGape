@@ -5,6 +5,8 @@ import static com.example.testing.R.id.MisDatosOpcion;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import app.dominio.testing.Adapter.UserAdapter;
+import app.dominio.testing.Model.User;
 import app.dominio.testing.Opciones.MainActivity3;
 
 import com.example.testing.R;
@@ -28,6 +32,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 public class Inicio extends AppCompatActivity {
 
 
@@ -40,7 +46,14 @@ public class Inicio extends AppCompatActivity {
     ImageView foto_perfil;
     TextView uidPerfil,correoPerfil,nombresPerfil;
 
-    Button btnp, CerraSesion, UsuarioOpcion, ChatsOpcion;
+    Button btnp, CerraSesion, ChatsOpcion;
+
+    Button emailEnviar;
+
+    RecyclerView recyclerView;
+    DatabaseReference database;
+    UserAdapter myAdapter;
+    ArrayList<User> list;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -65,7 +78,6 @@ public class Inicio extends AppCompatActivity {
 
         CerraSesion = findViewById(R.id.CerraSesion);
         btnp = findViewById(MisDatosOpcion);
-        UsuarioOpcion = findViewById(R.id.UsuarioOpcion);
         ChatsOpcion = findViewById(R.id.ChatsOpcion);
 
 
@@ -86,18 +98,37 @@ public class Inicio extends AppCompatActivity {
             }
         });
 
-        UsuarioOpcion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Inicio.this, DisplayMaestros.class));
-
-            }
-        });
-
         ChatsOpcion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Inicio.this, Chat.class));
+
+            }
+        });
+
+
+        recyclerView = findViewById(R.id.recycler);
+        database = FirebaseDatabase.getInstance().getReference("Maestros_DE_APP");
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        list = new ArrayList<>();
+        myAdapter = new UserAdapter(this, list);
+        recyclerView.setAdapter(myAdapter);
+
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    User user = dataSnapshot.getValue(User.class);
+                    list.add(user);
+                }
+                myAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });

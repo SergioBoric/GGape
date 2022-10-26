@@ -20,6 +20,8 @@
     <string name="EstadotxtD"> Linea</string>
     <string name="Direcciontxt">Direccion:  </string>
     <string name="DirecciontxtD"> -- </string>
+    <string name="Distancia">Distancia: </string>
+    <string name="km">1 Km</string>
 
 
     <string name="foto_perfil_dis"> </string>
@@ -28,7 +30,7 @@
     <string name="correoPerfilDis"> -- </string>
     <string name="especialistatxtDis">Especialista: </string>
     <string name="especialistaPerfilDis"> -- </string>
-    <string name="emailEnviar"> Empezar Chat </string>
+    <string name="emailEnviar"> Chat </string>
     <string name="Especialidad">Elige Especialidad</string>
     <string-array name="Especialidades">
         <item>Pintor</item>

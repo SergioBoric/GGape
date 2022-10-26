@@ -3,15 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#fff"
-    android:backgroundTint="#FFFFFF"
+    android:background="#87E5FF"
+    android:backgroundTint="#87E5FF"
+    android:layout_gravity="center"
     tools:context="app.dominio.testing.Inicio">
+
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF">
+        android:layout_height="match_parent"
+        android:backgroundTint="#41D5FF"
+        >
+
 
 
         <!--Datos Recuperacion-->
@@ -19,134 +23,202 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="20dp"
             android:orientation="vertical"
             android:padding="10dp">
 
-            <!--Foto perfil-->
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/foto_perfil_dis"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
-                android:background="#084C5F"
-                android:padding="3dp"
-                android:scaleType="center" />
-
-            <!--Mas datos-->
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-                <!--uid-->
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:padding="10sp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Estadotxt"
-                        android:textColor="#000" />
-
-
-                    <TextView
-                        android:id="@+id/EstadotxtD"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/EstadotxtD"
-                        android:textColor="#000" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/foto_perfil_dis"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="#084C5F"
+                        android:padding="3dp"/>
 
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
-                <!--correo-->
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Direcciontxt"
-                        android:textColor="#000" />
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/DirecciontxtD"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/DirecciontxtD"
-                        android:textColor="#000" />
+                        <!--uid-->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Estadotxt"
+                                android:textColor="#000" />
 
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
-                <!--nombre-->
+                            <TextView
+                                android:id="@+id/EstadotxtD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/EstadotxtD"
+                                android:textColor="#000" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <!--Foto perfil-->
+
+                        <!--Mas datos-->
+
+                        <!--correo-->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Direcciontxt"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/DirecciontxtD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/DirecciontxtD"
+                                android:textColor="#000" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                        <!--nombre-->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nombrestxt"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/nombresPerfilDis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/nombresPerfilDis"
+                                android:textColor="#000" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <!--Especialidad-->
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/especialistatxtDis"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/especialistaPerfilDis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/especialistaPerfilDis"
+                                android:textColor="#000" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Distancia"
+                                android:textColor="#000" />
+
+                            <TextView
+                                android:id="@+id/km"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/km"
+                                android:textColor="#000" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+
+
+
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/nombrestxt"
-                        android:textColor="#000" />
-
-                    <TextView
-                        android:id="@+id/nombresPerfilDis"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/nombresPerfilDis"
-                        android:textColor="#000" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <!--Especialidad-->
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/especialistatxtDis"
-                        android:textColor="#000" />
-
-                    <TextView
-                        android:id="@+id/especialistaPerfilDis"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/especialistaPerfilDis"
-                        android:textColor="#000" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
 
                     <Button
                         android:id="@+id/emailEnviar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="90dp"
+                        android:layout_height="85dp"
+                        android:layout_gravity="center_horizontal"
                         android:text="@string/emailEnviar"
                         android:textColor="#fff" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
+
+
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
