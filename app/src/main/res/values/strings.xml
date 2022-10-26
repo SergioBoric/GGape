@@ -29,6 +29,12 @@
     <string name="especialistatxtDis">Especialista: </string>
     <string name="especialistaPerfilDis"> -- </string>
     <string name="emailEnviar"> Enviar Email </string>
+    <string name="Especialidad">Elige Especialidad</string>
+    <string-array name="Especialidades">
+        <item>Plomero</item>
+        <item>Pintor</item>
+        <item>Limpiador</item>
+    </string-array>
 
     <!-- Main1 -->
     <string name="login">LOGIN Usuario</string>

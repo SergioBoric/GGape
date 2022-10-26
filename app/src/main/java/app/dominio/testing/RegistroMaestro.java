@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.testing.R;
@@ -27,6 +29,7 @@ import java.util.HashMap;
 public class RegistroMaestro extends AppCompatActivity {
 
     EditText Correo,Password,Nombres,Apellidos,Edad,Telefonos,Direccion,Rut;
+    Spinner Especialidad;
     Button REGISTRARUSUARIO;
 
     FirebaseAuth firebaseAuth;
@@ -51,6 +54,8 @@ public class RegistroMaestro extends AppCompatActivity {
         Telefonos = findViewById(R.id.Telefono);
         Direccion = findViewById(R.id.Direccion);
         REGISTRARUSUARIO = findViewById(R.id.REGISTRARUSUARIO);
+        Rut = findViewById(R.id.Rut);
+        Especialidad = findViewById(R.id.Especialidad);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -95,6 +100,9 @@ public class RegistroMaestro extends AppCompatActivity {
                             String edad = Edad.getText().toString();
                             String telefono = Telefonos.getText().toString();
                             String direccion = Direccion.getText().toString();
+                            String rut = Rut.getText().toString();
+                            String especialidad = Especialidad.getSelectedItem().toString();
+
 
                             HashMap<Object,String> DatosUsuario = new HashMap<>();
 
@@ -107,6 +115,8 @@ public class RegistroMaestro extends AppCompatActivity {
                             DatosUsuario.put("telefono",telefono);
                             DatosUsuario.put("direccion",direccion);
                             DatosUsuario.put("imagen","");
+                            DatosUsuario.put("rut", rut);
+                            DatosUsuario.put("especialidad", especialidad);
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference reference = database.getReference("Maestros_DE_APP");

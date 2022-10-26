@@ -2,14 +2,14 @@ package app.dominio.testing.Model;
 
 public class User {
 
-    String nombres, apellido, direccion, edad, img;
+    String nombres, especialidad, direccion, edad, img;
 
     public String getNombres() {
         return nombres;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getEspecialidad() {
+        return especialidad;
     }
 
     public String getDireccion() {

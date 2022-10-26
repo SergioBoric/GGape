@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -160,6 +160,37 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--Rut-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Especialidad" />
+
+                <Spinner
+                    android:id="@+id/Especialidad"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/Especialidades" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </RelativeLayout>
+
+
+
         <Button
             android:id="@+id/REGISTRARUSUARIO"
             android:text="@string/REGISTRARUSUARIO"
@@ -173,4 +204,4 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
