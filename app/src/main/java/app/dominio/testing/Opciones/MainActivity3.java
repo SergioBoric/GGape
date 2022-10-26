@@ -22,8 +22,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import app.dominio.testing.MainActivity;
+import app.dominio.testing.Model.ImgModel;
 
 import com.example.testing.R;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +36,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
@@ -142,6 +145,44 @@ public class MainActivity3 extends AppCompatActivity {
 
 
 
+
+    }
+
+    private void uploadToFirebase(Uri uri){
+
+        StorageReference fileRef = reference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        fileRef.putFile(uri).addOnCompleteListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
+            @Override
+            public void onSucesse(UploadTask.TaskSnapshot taskSnapshot){
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+
+                        ImgModel model = new ImgModel(uri.toString());
+                        String modelId = root.push().getKey();
+                        root.child(modelId).setValue(model);
+
+                        Toast.makeText(MainActivity3.this, "Exito", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainActivity3.this, "Fallo", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private String getFileExtension(Uri mUri){
+        ContentResolver cr = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(mUri));
 
     }
 
