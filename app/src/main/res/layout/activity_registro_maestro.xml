@@ -28,7 +28,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/icono_gape"
+            app:srcCompat="@drawable/iconogape"
             tools:layout_editor_absoluteX="45dp"
             tools:layout_editor_absoluteY="-62dp" />
 

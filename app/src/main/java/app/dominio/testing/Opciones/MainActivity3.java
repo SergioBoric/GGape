@@ -11,12 +11,15 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import app.dominio.testing.MainActivity;
 
@@ -33,6 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
@@ -131,7 +135,21 @@ public class MainActivity3 extends AppCompatActivity {
                     String telefono = ""+snapshot.child("telefono").getValue();
                     String imagen = ""+snapshot.child("imagen").getValue();
 
-                    //Seteamos los datos en los TextView e ImageView
+                    try {
+                        if(!ImagenDato.equals("")){
+                            Toast toast = Toast.makeText(getApplicationContext(), "Cargando foto", Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.CENTER,0,200);
+                            toast.show();
+                            Picasso.get()
+                                    .load(imagen)
+                                    .resize(150, 150)
+                                    .into(ImagenDato);
+                        }
+                    }catch (Exception e){
+                        Log.v("Error", "e: " + e);
+                    }
+
+                //Seteamos los datos en los TextView e ImageView
 
                     uidDato.setText(uid);
                     NombreDato.setText(nombres);
@@ -223,6 +241,7 @@ public class MainActivity3 extends AppCompatActivity {
         startActivity(i);
 
     }
+
 
 
     //Retrocede en navegation bar
