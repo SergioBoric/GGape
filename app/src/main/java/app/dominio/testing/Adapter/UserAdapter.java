@@ -43,7 +43,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder>{
         holder.nombres.setText((user.getNombres()));
         holder.especialidad.setText(user.getEspecialidad());
         holder.direccion.setText(user.getDireccion());
-        holder.edad.setText(user.getEdad());
+        //holder.edad.setText(user.getEdad());
     }
 
     @Override
@@ -59,10 +59,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder>{
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+
+            //edad = itemView.findViewById(R.id.EstadotxtD);
             nombres = itemView.findViewById(R.id.nombresPerfilDis);
             especialidad = itemView.findViewById((R.id.especialistaPerfilDis));
             direccion = itemView.findViewById(R.id.DirecciontxtD);
-            edad = itemView.findViewById(R.id.EstadotxtD);
             //img = itemView.findViewById(R.id.foto_perfil_dis);
         }
     }
