@@ -43,20 +43,9 @@ import java.util.HashMap;
 
 public class MainActivity3 extends AppCompatActivity {
 
-
-    private ProgressBar progressBar;
-    private Uri mImagenUri;
-
     TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, DireccionDato, TelefonoDato;
     private Button ActualizarIm,ActualizarD, ActualizarP,SubirFoto;
-    private ImageView ImagenDato;
-    private StorageReference storageReference;
 
-    String storage_path = "photo/*";
-
-    private Uri imagen_url;
-    String photo = "photo";
-    String idd;
 
     ProgressDialog progressDialog;
 
@@ -66,7 +55,6 @@ public class MainActivity3 extends AppCompatActivity {
 
     DatabaseReference BASE_DE_DATOS,databaseReference;
 
-    private static final int COD_SEL_IMAGEN = 300;
 
 
 
@@ -97,19 +85,8 @@ public class MainActivity3 extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        ImagenDato = findViewById(R.id.imagenDato);
-        SubirFoto = findViewById(R.id.SubirFoto);
-        ActualizarIm = findViewById(R.id.ActualizarIm);
-        storageReference = FirebaseStorage.getInstance().getReference();
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        progressDialog = new  ProgressDialog(this);
 
-        ActualizarIm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                uploadPhoto();
-            }
-        });
 
 
         BASE_DE_DATOS = FirebaseDatabase.getInstance().getReference( "USUARIOS_DE_APP" );
@@ -135,19 +112,6 @@ public class MainActivity3 extends AppCompatActivity {
                     String telefono = ""+snapshot.child("telefono").getValue();
                     String imagen = ""+snapshot.child("imagen").getValue();
 
-                    try {
-                        if(!ImagenDato.equals("")){
-                            Toast toast = Toast.makeText(getApplicationContext(), "Cargando foto", Toast.LENGTH_SHORT);
-                            toast.setGravity(Gravity.CENTER,0,200);
-                            toast.show();
-                            Picasso.get()
-                                    .load(imagen)
-                                    .resize(150, 150)
-                                    .into(ImagenDato);
-                        }
-                    }catch (Exception e){
-                        Log.v("Error", "e: " + e);
-                    }
 
                 //Seteamos los datos en los TextView e ImageView
 
@@ -181,59 +145,7 @@ public class MainActivity3 extends AppCompatActivity {
 
     }
 
-    private void uploadPhoto() {
-        Intent i = new Intent(Intent.ACTION_PICK);
-        i.setType("image/*");
 
-        startActivityForResult(i, COD_SEL_IMAGEN);
-    }
-
-    private String getFileExtension(Uri uri){
-        ContentResolver cR = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cR.getType(uri));
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if (requestCode == COD_SEL_IMAGEN){
-             imagen_url = data.getData();
-             subirPhoto(imagen_url);
-
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void subirPhoto(Uri imagen_url) {
-        progressDialog.setMessage("Actualizando Foto");
-        progressDialog.show();
-        String rute_store_photo = storage_path + "" + user.getUid() +""+ idd;
-        StorageReference reference = storageReference.child(rute_store_photo);
-        reference.putFile(imagen_url).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @SuppressLint("SuspiciousIndentation")
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isSuccessful());
-                    if (uriTask.isSuccessful()){
-                        uriTask.addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                String download_uri = uri.toString();
-                                HashMap<String, Object> map = new HashMap<>();
-                                map.put("photo", download_uri);
-                                BASE_DE_DATOS.child(user.getUid());
-                                progressDialog.dismiss();
-                            }
-                        });
-                    }
-
-            }
-        });
-    }
 
     private void gologing(){
         Intent i = new Intent(this, MainActivity.class);
