@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E47615"
+    android:background="#04485f"
     tools:context="app.dominio.testing.login">
 
     <androidx.appcompat.widget.LinearLayoutCompat

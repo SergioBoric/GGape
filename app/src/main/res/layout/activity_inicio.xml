@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="#04485f"
     tools:context="app.dominio.testing.Inicio">
 
 
@@ -62,7 +62,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/uidtxt"
-                        android:textColor="#000" />
+                        android:textColor="#fff" />
 
 
                     <TextView
@@ -70,7 +70,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/uidPerfil"
-                        android:textColor="#000" />
+                        android:textColor="#fff" />
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/correotxt"
-                        android:textColor="#000" />
+                        android:textColor="#fff" />
 
                     <TextView
                         android:id="@+id/correoPerfil"
@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="@string/correoPerfil"
-                        android:textColor="#000" />
+                        android:textColor="#fff" />
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -106,7 +106,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/nombrestxt"
-                        android:textColor="#000" />
+                        android:textColor="#fff" />
 
                     <TextView
                         android:id="@+id/nombresPerfil"
@@ -114,7 +114,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="@string/nombresPerfil"
-                        android:textColor="#000" />
+                        android:textColor="#fff" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -151,8 +151,9 @@
                         android:id="@+id/MisDatosOpcion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/boton_p"
                         android:text="@string/MisDatosOpcion"
-                        android:textColor="#fff" />
+                        android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <!-- Mis Datos-->
@@ -175,8 +176,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
+                        android:background="@drawable/boton_p"
                         android:text="@string/CrearPublicacionOpcion"
-                        android:textColor="#fff" />
+                        android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <!-- Crear Publicaciones-->
@@ -209,7 +211,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/PublicacionesOpciones"
-                        android:textColor="#fff" />
+                        android:background="@drawable/boton_p"
+                        android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <!-- Publicaciones-->
@@ -232,8 +235,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
+                        android:background="@drawable/boton_p"
                         android:text="@string/UsuarioOpciones"
-                        android:textColor="#fff" />
+                        android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <!-- Usuarios -->
@@ -267,8 +271,9 @@
                         android:id="@+id/ChatsOpcion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/boton_p"
                         android:text="@string/ChatsOpcion"
-                        android:textColor="#fff" />
+                        android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -294,7 +299,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="@string/cerrar_sesion"
-                        android:textColor="#fff" />
+                        android:background="@drawable/boton_p"
+                        android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <!-- Logout -->

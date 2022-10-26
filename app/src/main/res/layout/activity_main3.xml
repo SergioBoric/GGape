@@ -8,6 +8,7 @@
     tools:context="app.dominio.testing.Opciones.MainActivity3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#04485f"
     >
 
 
@@ -35,8 +36,8 @@
 
         <ImageView
             android:id="@+id/imagenDato"
-            android:layout_width="177dp"
-            android:layout_height="194dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +54,20 @@
                 android:background="@drawable/boton_p"
                 android:textColor="#000"
                 android:text="@string/ActualizarIm"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/SubirFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/boton_p"
+                android:textColor="#000"
+                android:text="@string/SubirFoto"
                 android:layout_gravity="center_horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

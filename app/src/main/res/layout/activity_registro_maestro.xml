@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E47615"
+    android:background="#04485f"
     tools:context="app.dominio.testing.RegistroMaestro">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -23,12 +23,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="10dp"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/logo"/>
+            app:srcCompat="@drawable/icono_gape"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="-62dp" />
 
         <!--correo-->
         <com.google.android.material.textfield.TextInputLayout

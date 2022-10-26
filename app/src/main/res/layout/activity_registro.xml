@@ -1,144 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#04485f"
     tools:context="app.dominio.testing.Registro">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/interfaz2" />
+        android:padding="10dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/registrarse"
-        android:layout_width="125dp"
-        android:layout_height="71dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginBottom="140dp"
-        android:text="registrar"
-        android:textColor="#000"
-        android:background="@drawable/boton_p"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/icono_gape"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="-62dp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="377dp"
-        android:layout_height="463dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="252dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
 
-        <EditText
-            android:id="@+id/Correo"
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="#000000"
-            android:hint="Correo"
-            android:textColor="#000000"
-            android:textColorHighlight="#000000"
-            android:textColorHint="#000000" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/Correo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="#fff"
+                android:hint="Correo"
+                android:textColor="#fff"
+                android:textColorHighlight="#fff"
+                android:textColorHint="#fff" />
 
-        <Space
+        </com.google.android.material.textfield.TextInputLayout>
 
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/Password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="#fff"
+                android:hint="Contraseña"
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
 
-        <EditText
-            android:id="@+id/Password"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="#000000"
-            android:hint="Contraseña"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/Nombres"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="#fff"
+                android:hint="Nombres"
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
 
-        <Space
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/Apellidos"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="#fff"
+                android:hint="Apellidos"
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
 
 
-        <EditText
-            android:id="@+id/Nombres"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="#000000"
-            android:hint="Nombres"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
+            android:layout_height="wrap_content">
 
-        <Space
+            <EditText
+                android:id="@+id/Edad"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="#fff"
+                android:hint="Edad"
+                android:inputType="date"
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
 
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/Telefono"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="#fff"
+                android:hint="Telefono"
+                android:inputType="phone"
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
 
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/Apellidos"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="#000000"
-            android:hint="Apellidos"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/Direccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#fff"
+                android:hint="Direccion"
+                android:minHeight="48dp"
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
 
-        <Space
+        </com.google.android.material.textfield.TextInputLayout>
 
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
 
-        <EditText
-            android:id="@+id/Edad"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="#000000"
-            android:inputType="date"
-            android:hint="Edad"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
-
-        <Space
-
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <EditText
-            android:id="@+id/Telefono"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="#000000"
-            android:inputType="phone"
-            android:hint="Telefono"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
-
-        <Space
-
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <EditText
-            android:id="@+id/Direccion"
+        <Button
+            android:id="@+id/registrarse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#000000"
-            android:hint="Direccion"
-            android:minHeight="48dp"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
+            android:layout_marginTop="20dp"
+            android:background="@drawable/boton_p"
+            android:layout_gravity="center"
+            android:text="registrar"
+            android:textColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</ScrollView>

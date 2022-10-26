@@ -1,18 +1,28 @@
 package app.dominio.testing.Opciones;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import app.dominio.testing.MainActivity;
+
 import com.example.testing.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -20,23 +30,39 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.util.HashMap;
 
 
 public class MainActivity3 extends AppCompatActivity {
 
 
-    ImageView ImagenDato;
+    private ProgressBar progressBar;
+    private Uri mImagenUri;
+
     TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, DireccionDato, TelefonoDato;
-    Button ActualizarD, ActualizarP, ActualizarIm;
+    private Button ActualizarIm,ActualizarD, ActualizarP,SubirFoto;
+    private ImageView ImagenDato;
+    private StorageReference storageReference;
+
+    String storage_path = "photo/*";
+
+    private Uri imagen_url;
+    String photo = "photo";
+    String idd;
+
+    ProgressDialog progressDialog;
 
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
-    DatabaseReference BASE_DE_DATOS;
+    DatabaseReference BASE_DE_DATOS,databaseReference;
 
-    private static final int COD_SEL_IMAGE = 300;
+    private static final int COD_SEL_IMAGEN = 300;
 
 
 
@@ -68,7 +94,19 @@ public class MainActivity3 extends AppCompatActivity {
         user = firebaseAuth.getCurrentUser();
 
         ImagenDato = findViewById(R.id.imagenDato);
+        SubirFoto = findViewById(R.id.SubirFoto);
         ActualizarIm = findViewById(R.id.ActualizarIm);
+        storageReference = FirebaseStorage.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        progressDialog = new  ProgressDialog(this);
+
+        ActualizarIm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                uploadPhoto();
+            }
+        });
+
 
         BASE_DE_DATOS = FirebaseDatabase.getInstance().getReference( "USUARIOS_DE_APP" );
 
@@ -103,15 +141,6 @@ public class MainActivity3 extends AppCompatActivity {
                     DireccionDato.setText(direccion);
                     EdadDato.setText(edad);
                     TelefonoDato.setText(telefono);
-
-                    //Obtener imagen
-                    try {
-                        //SI EXiste Imagen
-                        Picasso.get().load(imagen).placeholder(R.drawable.img_perfil).into(ImagenDato);
-                    }catch (Exception e){
-                        //Si no existe Imagen
-                        Picasso.get().load(R.drawable.img_perfil).into(ImagenDato);
-                    }
                 }
             }
 
@@ -134,12 +163,67 @@ public class MainActivity3 extends AppCompatActivity {
 
     }
 
+    private void uploadPhoto() {
+        Intent i = new Intent(Intent.ACTION_PICK);
+        i.setType("image/*");
+
+        startActivityForResult(i, COD_SEL_IMAGEN);
+    }
+
+    private String getFileExtension(Uri uri){
+        ContentResolver cR = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == COD_SEL_IMAGEN){
+             imagen_url = data.getData();
+             subirPhoto(imagen_url);
+
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void subirPhoto(Uri imagen_url) {
+        progressDialog.setMessage("Actualizando Foto");
+        progressDialog.show();
+        String rute_store_photo = storage_path + "" + user.getUid() +""+ idd;
+        StorageReference reference = storageReference.child(rute_store_photo);
+        reference.putFile(imagen_url).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @SuppressLint("SuspiciousIndentation")
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                while (!uriTask.isSuccessful());
+                    if (uriTask.isSuccessful()){
+                        uriTask.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                String download_uri = uri.toString();
+                                HashMap<String, Object> map = new HashMap<>();
+                                map.put("photo", download_uri);
+                                BASE_DE_DATOS.child(user.getUid());
+                                progressDialog.dismiss();
+                            }
+                        });
+                    }
+
+            }
+        });
+    }
+
     private void gologing(){
         Intent i = new Intent(this, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP /Intent.FLAG_ACTIVITY_CLEAR_TASK /Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
 
     }
+
 
     //Retrocede en navegation bar
     @Override

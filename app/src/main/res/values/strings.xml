@@ -99,6 +99,8 @@
     <string name="MisDatosTXT">Mis Datos Personales</string>
     <string name="ActualizarP">Actualizar Pass</string>
     <string name="ActualizarIm">Actualizar Foto</string>
+    <string name="SubirFoto">Subir Foto</string>
+
 
     <!--Cambio de contraseña-->
     <string name="MisCredencialesTXT">Mis Credenciales</string>

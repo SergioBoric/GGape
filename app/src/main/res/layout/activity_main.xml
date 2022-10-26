@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#350C0C"
-    android:backgroundTint="@color/teal_700"
+    android:background="#04485f"
+    android:backgroundTint="#04485f"
     tools:context="app.dominio.testing.MainActivity">
 
 
@@ -18,7 +18,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="380dp"
         android:foregroundGravity="center"
-        android:src="@drawable/gapee"
+        android:src="@drawable/icono_gape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
