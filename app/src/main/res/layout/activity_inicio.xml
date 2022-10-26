@@ -210,8 +210,8 @@
                         android:id="@+id/PublicacionesOpcion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/PublicacionesOpciones"
                         android:background="@drawable/boton_p"
+                        android:text="@string/PublicacionesOpciones"
                         android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -298,8 +298,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:text="@string/cerrar_sesion"
                         android:background="@drawable/boton_p"
+                        android:text="@string/cerrar_sesion"
                         android:textColor="#000" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

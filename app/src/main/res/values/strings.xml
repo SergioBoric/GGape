@@ -17,7 +17,7 @@
 
 
     <string name="Estadotxt">Estado: </string>
-    <string name="EstadotxtD"> -- </string>
+    <string name="EstadotxtD"> Linea</string>
     <string name="Direcciontxt">Direccion:  </string>
     <string name="DirecciontxtD"> -- </string>
 
@@ -28,12 +28,19 @@
     <string name="correoPerfilDis"> -- </string>
     <string name="especialistatxtDis">Especialista: </string>
     <string name="especialistaPerfilDis"> -- </string>
-    <string name="emailEnviar"> Enviar Email </string>
+    <string name="emailEnviar"> Empezar Chat </string>
     <string name="Especialidad">Elige Especialidad</string>
     <string-array name="Especialidades">
-        <item>Plomero</item>
         <item>Pintor</item>
         <item>Limpiador</item>
+        <item>carpintero</item>
+        <item>Gafiter-plomero</item>
+        <item>Mecánico</item>
+        <item>Editor</item>
+        <item>Reposteria</item>
+        <item>Chef-Carnicero</item>
+        <item>Abogado</item>
+        <item>Dentista</item>
     </string-array>
 
     <!-- Main1 -->
