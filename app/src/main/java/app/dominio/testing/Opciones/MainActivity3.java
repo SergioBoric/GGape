@@ -1,5 +1,3 @@
-
-
 package app.dominio.testing.Opciones;
 
 import androidx.annotation.NonNull;
@@ -151,16 +149,7 @@ public class MainActivity3 extends AppCompatActivity {
                     String direccion = ""+snapshot.child("direccion").getValue();
                     String edad = ""+snapshot.child("edad").getValue();
                     String telefono = ""+snapshot.child("telefono").getValue();
-                    String ImageView = ""+snapshot.child("imagen").getValue();
-
-                    //Obtener imagen
-                    try {
-                        //SI EXiste Imagen
-                        Picasso.get().load(ImageView).placeholder(R.drawable.gonzalo).into(imageView);
-                    }catch (Exception e){
-                        //Si no existe Imagen
-                        Picasso.get().load(R.drawable.gonzalo).into(imageView);
-                    }
+                    String imagen = ""+snapshot.child("imagen").getValue();
 
 
                     //Seteamos los datos en los TextView e ImageView
@@ -173,6 +162,18 @@ public class MainActivity3 extends AppCompatActivity {
                     DireccionDato.setText(direccion);
                     EdadDato.setText(edad);
                     TelefonoDato.setText(telefono);
+
+                    /* Declaramos try catch, para foto de perfil*/
+
+                    try {
+                        /*SI existe la imagen*/
+                        Picasso.get().load(imagen).placeholder(R.drawable.img_perfil).into(imageView);
+                    }catch (Exception e){
+                        /*SI el user no tiene imagen*/
+
+                        Picasso.get().load(R.drawable.img_perfil).into(imageView);
+
+                    }
                 }
             }
 
@@ -217,8 +218,8 @@ public class MainActivity3 extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
 
                         ImgModel model = new ImgModel(uri.toString());
-                        String modelId = BASE_DE_DATOS.push().getKey();
-                        BASE_DE_DATOS.child(modelId).setValue(model);
+                        String modelId = root.push().getKey();
+                        root.child(modelId).setValue(model);
 
                         Toast.makeText(MainActivity3.this, "Exito", Toast.LENGTH_SHORT).show();
                     }

@@ -86,7 +86,7 @@ public class Inicio extends AppCompatActivity {
             public void onClick(View view) {
 
                 //Creamos un metodo para cerrar sesio
-                 CerraSesion();
+                CerraSesion();
             }
         });
 
@@ -136,93 +136,93 @@ public class Inicio extends AppCompatActivity {
 
     }
 
-        //Lo que hacemos a continuancion sera declarar la clase "Inicio como la principal"
-        //Pero como bien sabemos la primera actividad se ejecutara en la pantalla de carga
+    //Lo que hacemos a continuancion sera declarar la clase "Inicio como la principal"
+    //Pero como bien sabemos la primera actividad se ejecutara en la pantalla de carga
 
-        @Override
-        protected void onStart(){
+    @Override
+    protected void onStart(){
         //Aqui LLamamos al metodo para que se ejecute cuando inicie actividad
-            VerificacionInicioSesion();
-            super.onStart();
+        VerificacionInicioSesion();
+        super.onStart();
+    }
+
+
+
+    //Creamos un metodo que permita verificar el usuario Iniciado previamente
+
+    private void VerificacionInicioSesion(){
+        //SI el Usuario ha iniciado Sesion nos direge directamente a estas actividad
+        if(firebaseUser != null){
+            CargarDatos();
+            Toast.makeText(this,"Se ha iniciado sesiÃ³n", Toast.LENGTH_SHORT).show();
+
+
         }
-
-
-
-        //Creamos un metodo que permita verificar el usuario Iniciado previamente
-
-        private void VerificacionInicioSesion(){
-            //SI el Usuario ha iniciado Sesion nos direge directamente a estas actividad
-            if(firebaseUser != null){
-                CargarDatos();
-                Toast.makeText(this,"Se ha iniciado sesión", Toast.LENGTH_SHORT).show();
-
-
-            }
-            //Caso COntrario Nos dirige al main Activity
-            else {
-                startActivity(new Intent( Inicio.this,MainActivity.class));
-                finish();
-            }
+        //Caso COntrario Nos dirige al main Activity
+        else {
+            startActivity(new Intent( Inicio.this,MainActivity.class));
+            finish();
         }
+    }
 
-        //Metodo para recuperar datos de firebase
+    //Metodo para recuperar datos de firebase
 
-        private void CargarDatos(){
-            Query query = BASE_DE_DATOS.orderByChild("correo").equalTo(firebaseUser.getEmail());
-            query.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    //Recorremos los usuarios, Registrados en la base de datos
-                    //Hasta encontrar el usuario actual
-                    for (DataSnapshot ds: snapshot.getChildren()){
+    private void CargarDatos(){
+        Query query = BASE_DE_DATOS.orderByChild("correo").equalTo(firebaseUser.getEmail());
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //Recorremos los usuarios, Registrados en la base de datos
+                //Hasta encontrar el usuario actual
+                for (DataSnapshot ds: snapshot.getChildren()){
 
-                        /*Obtenemos los valores */
-                        String uid = ""+ds.child("uid").getValue();
-                        String correo = ""+ds.child("correo").getValue();
-                        String nombres = ""+ds.child("nombres").getValue();
-                        String imagen = ""+ds.child("imagen").getValue();
+                    /*Obtenemos los valores */
+                    String uid = ""+ds.child("uid").getValue();
+                    String correo = ""+ds.child("correo").getValue();
+                    String nombres = ""+ds.child("nombres").getValue();
+                    String imagen = ""+ds.child("imagen").getValue();
 
 
-                        /* Seteamos los datos en nuestra vista */
-                        uidPerfil.setText(uid);
-                        correoPerfil.setText(correo);
-                        nombresPerfil.setText(nombres);
+                    /* Seteamos los datos en nuestra vista */
+                    uidPerfil.setText(uid);
+                    correoPerfil.setText(correo);
+                    nombresPerfil.setText(nombres);
 
-                        /* Declaramos try catch, para foto de perfil*/
+                    /* Declaramos try catch, para foto de perfil*/
 
-                        try {
-                            /*SI existe la imagen*/
-                            Picasso.get().load(imagen).placeholder(R.drawable.img_perfil).into(foto_perfil);
-                        }catch (Exception e){
-                            /*SI el user no tiene imagen*/
+                    try {
+                        /*SI existe la imagen*/
+                        Picasso.get().load(imagen).placeholder(R.drawable.img_perfil).into(foto_perfil);
+                    }catch (Exception e){
+                        /*SI el user no tiene imagen*/
 
-                            Picasso.get().load(R.drawable.img_perfil).into(foto_perfil);
-
-                        }
+                        Picasso.get().load(R.drawable.img_perfil).into(foto_perfil);
 
                     }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
 
                 }
-            });
-        }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 
 
 
-        //Metodo Cerra sesion
-        private void CerraSesion (){
-            firebaseAuth.signOut(); //Cierre sesion del usuario activo actualmente en la app
-            Toast.makeText(this, "Ha cerrado sesion", Toast.LENGTH_SHORT).show();
+    //Metodo Cerra sesion
+    private void CerraSesion (){
+        firebaseAuth.signOut(); //Cierre sesion del usuario activo actualmente en la app
+        Toast.makeText(this, "Ha cerrado sesion", Toast.LENGTH_SHORT).show();
 
-            //Luego de cerra sesion que nos dirija al main activity
-            startActivity(new Intent( Inicio.this,MainActivity.class));
+        //Luego de cerra sesion que nos dirija al main activity
+        startActivity(new Intent( Inicio.this,MainActivity.class));
 
 
 
-        }
+    }
 
 }

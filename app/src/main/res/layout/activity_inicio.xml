@@ -137,9 +137,9 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="70dp"
-                android:background="#000"
                 android:padding="3dp"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_perfil" />
 
             <!--Mas datos-->
             <androidx.appcompat.widget.LinearLayoutCompat

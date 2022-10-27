@@ -71,7 +71,7 @@ public class DatosMaestros extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_datos_maestros);
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
@@ -89,8 +89,8 @@ public class DatosMaestros extends AppCompatActivity {
         DireccionDatoM = findViewById(R.id.DireccionDatoM);
         TelefonoDatoM = findViewById(R.id.TelefonoDatoM);
 
-        ActualizarD = findViewById(R.id.ActualizarDM);
-        ActualizarP = findViewById(R.id.ActualizarPM);
+        ActualizarD = findViewById(R.id.ActualizarD);
+        ActualizarP = findViewById(R.id.ActualizarP);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -164,6 +164,18 @@ public class DatosMaestros extends AppCompatActivity {
                     DireccionDatoM.setText(direccion);
                     EdadDatoM.setText(edad);
                     TelefonoDatoM.setText(telefono);
+
+                    /* Declaramos try catch, para foto de perfil*/
+
+                    try {
+                        /*SI existe la imagen*/
+                        Picasso.get().load(imagen).placeholder(R.drawable.img_perfil).into(imageView);
+                    }catch (Exception e){
+                        /*SI el user no tiene imagen*/
+
+                        Picasso.get().load(R.drawable.img_perfil).into(imageView);
+
+                    }
                 }
             }
 

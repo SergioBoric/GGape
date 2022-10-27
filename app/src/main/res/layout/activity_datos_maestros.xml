@@ -35,7 +35,7 @@
             app:layout_constraintVertical_bias="0.029" />
 
         <ImageView
-            android:id="@+id/imagenDato"
+            android:id="@+id/imagenDatoM"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
@@ -61,7 +61,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/SubirFoto"
+            android:id="@+id/SubirFotoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
@@ -75,7 +75,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/uidDato"
+            android:id="@+id/uidDatoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -91,7 +91,7 @@
             app:layout_constraintVertical_bias="0.029" />
 
         <TextView
-            android:id="@+id/NombreDato"
+            android:id="@+id/NombreDatoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -107,7 +107,7 @@
             app:layout_constraintVertical_bias="0.029" />
 
         <TextView
-            android:id="@+id/ApellidoDato"
+            android:id="@+id/ApellidoDatoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -122,7 +122,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.029" />
         <TextView
-            android:id="@+id/CorreoDato"
+            android:id="@+id/CorreoDatoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -138,7 +138,7 @@
             app:layout_constraintVertical_bias="0.029" />
 
         <TextView
-            android:id="@+id/PasswordDato"
+            android:id="@+id/PasswordDatoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -155,7 +155,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.029" />
         <TextView
-            android:id="@+id/EdadDato"
+            android:id="@+id/EdadDatoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -171,7 +171,7 @@
             app:layout_constraintVertical_bias="0.029" />
 
         <TextView
-            android:id="@+id/DireccionDato"
+            android:id="@+id/DireccionDatoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -186,7 +186,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.029" />
         <TextView
-            android:id="@+id/TelefonoDato"
+            android:id="@+id/TelefonoDatoM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -202,7 +202,7 @@
             app:layout_constraintVertical_bias="0.029" />
 
         <Button
-            android:id="@+id/ActualizarD"
+            android:id="@+id/ActualizarDM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
@@ -216,7 +216,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/ActualizarP"
+            android:id="@+id/ActualizarPM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
@@ -235,4 +235,3 @@
 
 
 </ScrollView>
-
