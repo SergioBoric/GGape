@@ -89,13 +89,13 @@ public class DatosMaestros extends AppCompatActivity {
         DireccionDatoM = findViewById(R.id.DireccionDatoM);
         TelefonoDatoM = findViewById(R.id.TelefonoDatoM);
 
-        ActualizarD = findViewById(R.id.ActualizarD);
-        ActualizarP = findViewById(R.id.ActualizarP);
+        ActualizarD = findViewById(R.id.ActualizarDM);
+        ActualizarP = findViewById(R.id.ActualizarPM);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        imageView = findViewById(R.id.imagenDato);
+        imageView = findViewById(R.id.imagenDatoM);
         ActualizarIm = findViewById(R.id.ActualizarIm);
 
         imageView.setOnClickListener(new View.OnClickListener() {

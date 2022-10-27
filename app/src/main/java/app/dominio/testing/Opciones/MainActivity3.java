@@ -44,12 +44,13 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 public class MainActivity3 extends AppCompatActivity {
+    FirebaseUser user;
 
     TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, DireccionDato, TelefonoDato;
     private Button ActualizarIm,ActualizarD, ActualizarP,SubirFoto;
     private ImageView imageView;
     private ProgressBar progressBar;
-    private DatabaseReference root = FirebaseDatabase.getInstance().getReference("imagen");
+    private DatabaseReference root = FirebaseDatabase.getInstance().getReference().child("USUARIOS_DE_APP");
     private StorageReference reference = FirebaseStorage.getInstance().getReference();
     private Uri imageUri;
 
@@ -59,7 +60,6 @@ public class MainActivity3 extends AppCompatActivity {
 
 
     FirebaseAuth firebaseAuth;
-    FirebaseUser user;
 
     DatabaseReference BASE_DE_DATOS,databaseReference;
 
@@ -106,6 +106,7 @@ public class MainActivity3 extends AppCompatActivity {
 
             }
         });
+
 
         ActualizarIm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,8 +209,11 @@ public class MainActivity3 extends AppCompatActivity {
     }
 
     private void uploadToFirebase(Uri uri){
-
         StorageReference fileRef = reference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+
+
+
+
         fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
