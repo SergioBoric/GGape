@@ -50,10 +50,7 @@ public class Inicio_Maestros extends AppCompatActivity {
 
     Button emailEnviar;
 
-    RecyclerView recyclerView;
-    DatabaseReference database;
-    UserAdapter myAdapter;
-    ArrayList<User> list;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -97,31 +94,6 @@ public class Inicio_Maestros extends AppCompatActivity {
             }
         });
 
-        recyclerView = findViewById(R.id.recycler);
-        database = FirebaseDatabase.getInstance().getReference("USUARIOS_DE_APP");
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        list = new ArrayList<>();
-        myAdapter = new UserAdapter(this, list);
-        recyclerView.setAdapter(myAdapter);
-
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    User user = dataSnapshot.getValue(User.class);
-                    list.add(user);
-                }
-                myAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
 
 

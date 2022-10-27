@@ -2,7 +2,7 @@ package app.dominio.testing.Model;
 
 public class User {
 
-    String nombres, especialidad, direccion, edad, img;
+    String nombres, especialidad, direccion, edad, imagen;
 
     public String getNombres() {
         return nombres;
@@ -20,7 +20,7 @@ public class User {
         return edad;
     }
 
-    public String getImg() {
-        return img;
+    public String getImagen() {
+        return imagen;
     }
 }
