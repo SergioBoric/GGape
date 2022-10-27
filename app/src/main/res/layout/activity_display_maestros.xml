@@ -9,7 +9,7 @@
     android:background="#04485f">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/j"
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.recyclerview.widget.RecyclerView>

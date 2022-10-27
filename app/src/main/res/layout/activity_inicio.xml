@@ -136,8 +136,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
-                android:background="#084C5F"
+                android:layout_marginTop="70dp"
+                android:background="#000"
                 android:padding="3dp"
                 android:scaleType="centerCrop" />
 
@@ -146,6 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+
                 android:orientation="vertical">
 
                 <!--uid-->
@@ -271,8 +272,6 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-
-
                 <!-- Usuarios -->
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -282,8 +281,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp">
-            </androidx.recyclerview.widget.RecyclerView>
 
+            </androidx.recyclerview.widget.RecyclerView>
 
 
             <!--OPcion 5-6-->
