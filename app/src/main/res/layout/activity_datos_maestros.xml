@@ -52,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:background="@drawable/boton_p"
+            android:layout_marginTop="10dp"
             android:textColor="#000"
             android:text="@string/ActualizarIm"
             android:layout_gravity="center_horizontal"
@@ -60,19 +61,7 @@
             app:layout_constraintHorizontal_bias="0.07"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/SubirFotoM"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/boton_p"
-            android:textColor="#000"
-            android:text="@string/SubirFoto"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
-            app:layout_constraintStart_toStartOf="parent" />
+
 
         <TextView
             android:id="@+id/uidDatoM"
@@ -201,33 +190,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.029" />
 
-        <Button
-            android:id="@+id/ActualizarDM"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/boton_p"
-            android:textColor="#000"
-            android:text="@string/ActualizarD"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/ActualizarPM"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/boton_p"
-            android:textColor="#000"
-            android:text="@string/ActualizarP"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
-            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

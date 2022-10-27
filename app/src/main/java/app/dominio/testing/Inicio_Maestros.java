@@ -17,9 +17,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import app.dominio.testing.Adapter.UserAdapter;
+import app.dominio.testing.Adapter.MasterAdapter;
 import app.dominio.testing.Model.User;
-import app.dominio.testing.Opciones.MainActivity3;
+import app.dominio.testing.Opciones.DatosMaestros;
 
 import com.example.testing.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,16 +43,16 @@ public class Inicio_Maestros extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference BASE_DE_DATOS;
 
-    ImageView foto_perfil;
+    ImageView foto_perfil,MensajeEnviar;
     TextView MuidPerfil,MnombresPerfil,McorreoPerfil;
 
-    Button btnp, CerraSesion;
+    Button btnp, CerraSesion,ChatsOpcion;
 
     Button emailEnviar;
 
     RecyclerView recyclerView;
     DatabaseReference database;
-    UserAdapter myAdapter;
+    MasterAdapter masterAdapter;
     ArrayList<User> list;
 
     @SuppressLint("MissingInflatedId")
@@ -78,6 +78,8 @@ public class Inicio_Maestros extends AppCompatActivity {
 
         CerraSesion = findViewById(R.id.CerraSesion);
         btnp = findViewById(MisDatosOpcion);
+        ChatsOpcion = findViewById(R.id.ChatsOpcion2);
+        MensajeEnviar = findViewById(R.id.MensajeEnviar);
 
 
         CerraSesion.setOnClickListener(new View.OnClickListener() {
@@ -89,10 +91,21 @@ public class Inicio_Maestros extends AppCompatActivity {
             }
         });
 
+        ChatsOpcion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Inicio_Maestros.this, Chat.class));
+
+            }
+        });
+
+
+
+
         btnp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Inicio_Maestros.this, MainActivity3.class));
+                startActivity(new Intent(Inicio_Maestros.this, DatosMaestros.class));
 
             }
         });
@@ -103,8 +116,8 @@ public class Inicio_Maestros extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
-        myAdapter = new UserAdapter(this, list);
-        recyclerView.setAdapter(myAdapter);
+        masterAdapter = new MasterAdapter(this, list);
+        recyclerView.setAdapter(masterAdapter);
 
         database.addValueEventListener(new ValueEventListener() {
             @Override
@@ -114,7 +127,7 @@ public class Inicio_Maestros extends AppCompatActivity {
                     User user = dataSnapshot.getValue(User.class);
                     list.add(user);
                 }
-                myAdapter.notifyDataSetChanged();
+                masterAdapter.notifyDataSetChanged();
             }
 
             @Override

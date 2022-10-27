@@ -28,7 +28,7 @@ import java.util.HashMap;
 
 public class RegistroMaestro extends AppCompatActivity {
 
-    EditText Correo,Password,Nombres,Apellidos,Edad,Telefonos,Direccion,Rut;
+    EditText Correo,Password,Nombres,Apellidos,Edad,Telefonos,Comuna,Rut;
     Spinner Especialidad;
     Button REGISTRARUSUARIO;
 
@@ -52,7 +52,7 @@ public class RegistroMaestro extends AppCompatActivity {
         Apellidos = findViewById(R.id.Apellidos);
         Edad = findViewById(R.id.Edad);
         Telefonos = findViewById(R.id.Telefono);
-        Direccion = findViewById(R.id.Direccion);
+        Comuna = findViewById(R.id.Direccion);
         REGISTRARUSUARIO = findViewById(R.id.REGISTRARUSUARIO);
         Rut = findViewById(R.id.Rut);
         Especialidad = findViewById(R.id.Especialidad);
@@ -99,7 +99,7 @@ public class RegistroMaestro extends AppCompatActivity {
                             String apellidos = Apellidos.getText().toString();
                             String edad = Edad.getText().toString();
                             String telefono = Telefonos.getText().toString();
-                            String direccion = Direccion.getText().toString();
+                            String comuna = Comuna.getText().toString();
                             String rut = Rut.getText().toString();
                             String especialidad = Especialidad.getSelectedItem().toString();
 
@@ -113,7 +113,7 @@ public class RegistroMaestro extends AppCompatActivity {
                             DatosUsuario.put("apellidos",apellidos);
                             DatosUsuario.put("edad",edad);
                             DatosUsuario.put("telefono",telefono);
-                            DatosUsuario.put("direccion",direccion);
+                            DatosUsuario.put("comuna",comuna);
                             DatosUsuario.put("imagen","");
                             DatosUsuario.put("rut", rut);
                             DatosUsuario.put("especialidad", especialidad);

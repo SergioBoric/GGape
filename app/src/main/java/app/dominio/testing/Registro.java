@@ -27,7 +27,7 @@ import java.util.HashMap;
 public class Registro extends AppCompatActivity {
 
     Button registrar;
-    EditText Correo,Password,Nombres,Apellidos,Edad,Telefono,Direccion;
+    EditText Correo,Password,Nombres,Apellidos,Edad,Telefono,Comuna;
 
     FirebaseAuth firebaseAuth;
 
@@ -48,7 +48,7 @@ public class Registro extends AppCompatActivity {
         Apellidos = findViewById(R.id.Apellidos);
         Edad = findViewById(R.id.Edad);
         Telefono = findViewById(R.id.Telefono);
-        Direccion = findViewById(R.id.Direccion);
+        Comuna = findViewById(R.id.Direccion);
         registrar = findViewById(R.id.registrarse);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -93,7 +93,7 @@ public class Registro extends AppCompatActivity {
                             String apellidos = Apellidos.getText().toString();
                             String edad = Edad.getText().toString();
                             String telefono = Telefono.getText().toString();
-                            String direccion = Direccion.getText().toString();
+                            String comuna = Comuna.getText().toString();
 
 
                             HashMap<Object,String> DatosUsuario = new HashMap<>();
@@ -105,7 +105,7 @@ public class Registro extends AppCompatActivity {
                             DatosUsuario.put("apellidos",apellidos);
                             DatosUsuario.put("edad",edad);
                             DatosUsuario.put("telefono",telefono);
-                            DatosUsuario.put("direccion",direccion);
+                            DatosUsuario.put("comuna",comuna);
                             DatosUsuario.put("imagen","");
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();

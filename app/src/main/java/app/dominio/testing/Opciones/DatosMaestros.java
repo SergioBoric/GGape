@@ -48,7 +48,7 @@ import java.util.HashMap;
 public class DatosMaestros extends AppCompatActivity {
 
     TextView uidDatoM, NombreDatoM, ApellidoDatoM, CorreoDatoM, PasswordDatoM, EdadDatoM, DireccionDatoM, TelefonoDatoM;
-    private Button ActualizarIm,ActualizarD, ActualizarP,SubirFoto;
+    private Button ActualizarIm;
     private ImageView imageView;
     private ProgressBar progressBar;
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference("imagen");
@@ -89,8 +89,6 @@ public class DatosMaestros extends AppCompatActivity {
         DireccionDatoM = findViewById(R.id.DireccionDatoM);
         TelefonoDatoM = findViewById(R.id.TelefonoDatoM);
 
-        ActualizarD = findViewById(R.id.ActualizarDM);
-        ActualizarP = findViewById(R.id.ActualizarPM);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -184,14 +182,6 @@ public class DatosMaestros extends AppCompatActivity {
 
             }
         });
-
-        ActualizarP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
 
 
 

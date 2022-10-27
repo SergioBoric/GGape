@@ -47,7 +47,7 @@ public class MainActivity3 extends AppCompatActivity {
     FirebaseUser user;
 
     TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, DireccionDato, TelefonoDato;
-    private Button ActualizarIm,ActualizarD, ActualizarP,SubirFoto;
+    private Button ActualizarIm;
     private ImageView imageView;
     private ProgressBar progressBar;
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference().child("USUARIOS_DE_APP");
@@ -87,8 +87,6 @@ public class MainActivity3 extends AppCompatActivity {
         DireccionDato = findViewById(R.id.DireccionDato);
         TelefonoDato = findViewById(R.id.TelefonoDato);
 
-        ActualizarD = findViewById(R.id.ActualizarD);
-        ActualizarP = findViewById(R.id.ActualizarP);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -183,14 +181,6 @@ public class MainActivity3 extends AppCompatActivity {
 
             }
         });
-
-        ActualizarP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
 
 
 
