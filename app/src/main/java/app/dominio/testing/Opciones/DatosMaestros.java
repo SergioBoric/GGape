@@ -47,7 +47,7 @@ import java.util.HashMap;
 
 public class DatosMaestros extends AppCompatActivity {
 
-    TextView uidDatoM, NombreDatoM, ApellidoDatoM, CorreoDatoM, PasswordDatoM, EdadDatoM, DireccionDatoM, TelefonoDatoM;
+    TextView uidDatoM, NombreDatoM, ApellidoDatoM, CorreoDatoM, PasswordDatoM, EdadDatoM, Comuna1, TelefonoDatoM;
     private Button ActualizarIm;
     private ImageView imageView;
     private ProgressBar progressBar;
@@ -86,7 +86,7 @@ public class DatosMaestros extends AppCompatActivity {
         CorreoDatoM = findViewById(R.id.CorreoDatoM);
         PasswordDatoM = findViewById(R.id.PasswordDatoM);
         EdadDatoM = findViewById(R.id.EdadDatoM);
-        DireccionDatoM = findViewById(R.id.DireccionDatoM);
+        Comuna1 = findViewById(R.id.Comuna1);
         TelefonoDatoM = findViewById(R.id.TelefonoDatoM);
 
 
@@ -146,7 +146,7 @@ public class DatosMaestros extends AppCompatActivity {
                     String apellidos = ""+snapshot.child("apellidos").getValue();
                     String correo = ""+snapshot.child("correo").getValue();
                     String password = ""+snapshot.child("pass").getValue();
-                    String direccion = ""+snapshot.child("direccion").getValue();
+                    String comuna = ""+snapshot.child("comuna").getValue();
                     String edad = ""+snapshot.child("edad").getValue();
                     String telefono = ""+snapshot.child("telefono").getValue();
                     String imagen = ""+snapshot.child("imagen").getValue();
@@ -159,7 +159,7 @@ public class DatosMaestros extends AppCompatActivity {
                     ApellidoDatoM.setText(apellidos);
                     CorreoDatoM.setText(correo);
                     PasswordDatoM.setText(password);
-                    DireccionDatoM.setText(direccion);
+                    Comuna1.setText(comuna);
                     EdadDatoM.setText(edad);
                     TelefonoDatoM.setText(telefono);
 

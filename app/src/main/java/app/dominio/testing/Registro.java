@@ -48,7 +48,7 @@ public class Registro extends AppCompatActivity {
         Apellidos = findViewById(R.id.Apellidos);
         Edad = findViewById(R.id.Edad);
         Telefono = findViewById(R.id.Telefono);
-        Comuna = findViewById(R.id.Direccion);
+        Comuna = findViewById(R.id.Comuna);
         registrar = findViewById(R.id.registrarse);
 
         firebaseAuth = FirebaseAuth.getInstance();

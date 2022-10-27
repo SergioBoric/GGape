@@ -46,7 +46,7 @@ import java.util.HashMap;
 public class MainActivity3 extends AppCompatActivity {
     FirebaseUser user;
 
-    TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, DireccionDato, TelefonoDato;
+    TextView uidDato, NombreDato, ApellidoDato, CorreoDato, PasswordDato, EdadDato, Comuna, TelefonoDato;
     private Button ActualizarIm;
     private ImageView imageView;
     private ProgressBar progressBar;
@@ -84,7 +84,7 @@ public class MainActivity3 extends AppCompatActivity {
         CorreoDato = findViewById(R.id.CorreoDato);
         PasswordDato = findViewById(R.id.PasswordDato);
         EdadDato = findViewById(R.id.EdadDato);
-        DireccionDato = findViewById(R.id.DireccionDato);
+        Comuna = findViewById(R.id.Comuna);
         TelefonoDato = findViewById(R.id.TelefonoDato);
 
 
@@ -145,7 +145,7 @@ public class MainActivity3 extends AppCompatActivity {
                     String apellidos = ""+snapshot.child("apellidos").getValue();
                     String correo = ""+snapshot.child("correo").getValue();
                     String password = ""+snapshot.child("pass").getValue();
-                    String direccion = ""+snapshot.child("direccion").getValue();
+                    String comuna = ""+snapshot.child("comuna").getValue();
                     String edad = ""+snapshot.child("edad").getValue();
                     String telefono = ""+snapshot.child("telefono").getValue();
                     String imagen = ""+snapshot.child("imagen").getValue();
@@ -158,7 +158,7 @@ public class MainActivity3 extends AppCompatActivity {
                     ApellidoDato.setText(apellidos);
                     CorreoDato.setText(correo);
                     PasswordDato.setText(password);
-                    DireccionDato.setText(direccion);
+                    Comuna.setText(comuna);
                     EdadDato.setText(edad);
                     TelefonoDato.setText(telefono);
 

@@ -108,7 +108,7 @@
     <string name="CorreoDato">Correo</string>
     <string name="PasswordDato">Password</string>
     <string name="EdadDato">Edad</string>
-    <string name="DireccionDato">Direccion</string>
+    <string name="Comuna">Comuna</string>
     <string name="TelefonoDato">Telefono</string>
     <string name="ActualizarD">Actualizar Datos</string>
     <string name="MisDatosTXT">Mis Datos Personales</string>

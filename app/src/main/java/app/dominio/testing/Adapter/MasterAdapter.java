@@ -39,7 +39,7 @@ public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.MyViewHold
         User user = list.get(position);
 
         holder.nombres.setText((user.getNombres()));
-        holder.direccion.setText(user.getDireccion());
+        holder.Comuna.setText(user.getComuna());
         //holder.edad.setText(user.getEdad());
     }
 
@@ -51,7 +51,7 @@ public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.MyViewHold
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
 
-        TextView nombres, especialidad, direccion, edad, imagen;
+        TextView nombres, especialidad, Comuna, edad, imagen;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,7 +59,7 @@ public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.MyViewHold
 
             //edad = itemView.findViewById(R.id.EstadotxtD);
             nombres = itemView.findViewById(R.id.nombresPerfilDism);
-            direccion = itemView.findViewById(R.id.DirecciontxtDm);
+            Comuna = itemView.findViewById(R.id.DirecciontxtDm);
             //imagen = itemView.findViewById(R.id.foto_perfil_dis);
         }
     }

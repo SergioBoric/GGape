@@ -52,7 +52,7 @@ public class RegistroMaestro extends AppCompatActivity {
         Apellidos = findViewById(R.id.Apellidos);
         Edad = findViewById(R.id.Edad);
         Telefonos = findViewById(R.id.Telefono);
-        Comuna = findViewById(R.id.Direccion);
+        Comuna = findViewById(R.id.ComunaM);
         REGISTRARUSUARIO = findViewById(R.id.REGISTRARUSUARIO);
         Rut = findViewById(R.id.Rut);
         Especialidad = findViewById(R.id.Especialidad);

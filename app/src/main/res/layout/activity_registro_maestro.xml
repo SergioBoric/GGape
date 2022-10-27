@@ -134,8 +134,8 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/Direccion"
-                android:hint="@string/Direccion"
+                android:id="@+id/ComunaM"
+                android:hint="@string/Comuna"
                 android:inputType="textCapWords|textAutoCorrect"
                 android:textColorHint="#000"
                 android:layout_width="match_parent"
