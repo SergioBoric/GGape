@@ -25,28 +25,6 @@
             tools:layout_editor_absoluteX="45dp"
             tools:layout_editor_absoluteY="-62dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/fotoPerfil"
-                android:layout_width="150sp"
-                android:layout_height="150sp"
-                android:src="@drawable/img_perfil"/>
-            <Button
-                android:id="@+id/Cambiarfoto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/boton_p"
-                android:textColor="#000"
-                android:layout_gravity="center"
-                android:text="Toca para cambiar tu foto de perfil"/>
-        </LinearLayout>
-
-
-
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

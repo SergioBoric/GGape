@@ -50,12 +50,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder>{
         holder.nombres.setText((user.getNombres()));
         holder.especialidad.setText(user.getEspecialidad());
         holder.Comuna.setText(user.getComuna());
-        holder.getLayoutPrincipal().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Inicio.this,"Key"+user.getUid(), Toast.LENGTH_SHORT).show();
-            }
-        });
+
         //holder.edad.setText(user.getEdad());
     }
 
