@@ -22,6 +22,7 @@ import app.dominio.testing.Model.User;
 import app.dominio.testing.Opciones.MainActivity3;
 
 import com.example.testing.R;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -60,6 +61,15 @@ public class Inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
+        Query query = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("Maestros_DE_APP");
+
+        FirebaseRecyclerOptions<User> options =
+                new FirebaseRecyclerOptions.Builder<User>()
+                        .setQuery(query, User.class)
+                        .build();
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;

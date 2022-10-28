@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.testing.R;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -22,12 +26,35 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.kbeanie.multipicker.api.CacheLocation;
+import com.kbeanie.multipicker.api.CameraImagePicker;
+import com.kbeanie.multipicker.api.ImagePicker;
+import com.kbeanie.multipicker.api.Picker;
+import com.kbeanie.multipicker.api.callbacks.ImagePickerCallback;
+import com.kbeanie.multipicker.api.entity.ChosenImage;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Registro extends AppCompatActivity {
 
-    Button registrar;
+    private CircleImageView fotoPerfil;
+    Button registrar, Cambiarfoto;
     EditText Correo,Password,Nombres,Apellidos,Edad,Telefono,Comuna;
+
+    private ImagePicker imagePicker;
+    private CameraImagePicker cameraPicker;
+
+    private String pickerPath;
+    private Uri fotoPerfilUri;
 
     FirebaseAuth firebaseAuth;
 
@@ -50,8 +77,74 @@ public class Registro extends AppCompatActivity {
         Telefono = findViewById(R.id.Telefono);
         Comuna = findViewById(R.id.Comuna);
         registrar = findViewById(R.id.registrarse);
+        fotoPerfil = findViewById(R.id.fotoPerfil);
+        Cambiarfoto = findViewById(R.id.Cambiarfoto);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        imagePicker = new ImagePicker(this);
+        cameraPicker = new CameraImagePicker(this);
+
+        cameraPicker.setCacheLocation(CacheLocation.EXTERNAL_STORAGE_APP_DIR);
+
+        imagePicker.setImagePickerCallback(new ImagePickerCallback() {
+            @Override
+            public void onImagesChosen(List<ChosenImage> list) {
+                if(!list.isEmpty()){
+                    String path = list.get(0).getOriginalPath();
+                    fotoPerfilUri = Uri.parse(path);
+                    fotoPerfil.setImageURI(fotoPerfilUri);
+                }
+            }
+
+            @Override
+            public void onError(String s) {
+                Toast.makeText(Registro.this, "Error: "+s, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        cameraPicker.setImagePickerCallback(new ImagePickerCallback() {
+            @Override
+            public void onImagesChosen(List<ChosenImage> list) {
+                String path = list.get(0).getOriginalPath();
+                fotoPerfilUri = Uri.fromFile(new File(path));
+                fotoPerfil.setImageURI(fotoPerfilUri);
+            }
+
+            @Override
+            public void onError(String s) {
+                Toast.makeText(Registro.this, "Error: "+s, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        fotoPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(Registro.this);
+                dialog.setTitle("Foto de perfil");
+
+                String[] items = {"Galeria","Camara"};
+
+                dialog.setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        switch (i){
+                            case 0:
+                                imagePicker.pickImage();
+                                break;
+                            case 1:
+                                pickerPath = cameraPicker.pickImage();
+                                break;
+                        }
+                    }
+                });
+
+                AlertDialog dialogConstruido = dialog.create();
+                dialogConstruido.show();
+
+            }
+        });
+
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +187,7 @@ public class Registro extends AppCompatActivity {
                             String edad = Edad.getText().toString();
                             String telefono = Telefono.getText().toString();
                             String comuna = Comuna.getText().toString();
+                            //Uri imagen = ;
 
 
                             HashMap<Object,String> DatosUsuario = new HashMap<>();
@@ -106,7 +200,7 @@ public class Registro extends AppCompatActivity {
                             DatosUsuario.put("edad",edad);
                             DatosUsuario.put("telefono",telefono);
                             DatosUsuario.put("comuna",comuna);
-                            DatosUsuario.put("imagen","");
+                            //DatosUsuario.put("imagen",imagen);
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference reference = database.getReference("USUARIOS_DE_APP");
