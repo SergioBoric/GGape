@@ -79,7 +79,6 @@ public class Inicio_Maestros extends AppCompatActivity {
         CerraSesion = findViewById(R.id.CerraSesion);
         btnp = findViewById(MisDatosOpcion);
         ChatsOpcion = findViewById(R.id.ChatsOpcion2);
-        MensajeEnviar = findViewById(R.id.MensajeEnviar);
 
 
         CerraSesion.setOnClickListener(new View.OnClickListener() {
