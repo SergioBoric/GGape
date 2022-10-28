@@ -78,7 +78,6 @@ public class Registro extends AppCompatActivity {
         Comuna = findViewById(R.id.Comuna);
         registrar = findViewById(R.id.registrarse);
         fotoPerfil = findViewById(R.id.fotoPerfil);
-        Cambiarfoto = findViewById(R.id.Cambiarfoto);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
