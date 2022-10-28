@@ -128,10 +128,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginTop="10dp"
             android:padding="10dp">
 
             <!--Foto perfil-->
-
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/foto_perfil"
                 android:layout_width="100dp"
@@ -141,6 +141,21 @@
                 android:background="#084C5F"
                 android:padding="3dp"
                 android:scaleType="centerCrop" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star"/>
+
+                <ImageView
+                    android:layout_width="195dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/broncelogo"/>
+
+            </LinearLayout>
 
             <!--Mas datos-->
             <androidx.appcompat.widget.LinearLayoutCompat

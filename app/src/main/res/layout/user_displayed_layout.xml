@@ -32,18 +32,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:padding="10sp">
 
                     <androidx.appcompat.widget.AppCompatImageView
+
                         android:id="@+id/foto_perfil_dis"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:background="#084C5F"
-                        android:padding="3dp"/>
+                        android:padding="3dp"
+                        android:src="@drawable/img_perfil" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/star" />
 
 
                 </LinearLayout>

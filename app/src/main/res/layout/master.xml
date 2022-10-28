@@ -43,6 +43,7 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:background="#084C5F"
+                        android:src="@drawable/img_perfil"
                         android:padding="3dp"/>
 
 
