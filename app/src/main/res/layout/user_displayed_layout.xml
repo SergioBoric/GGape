@@ -208,7 +208,7 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:id="@+id/MensajeEnviar"
+                        android:id="@+id/layoutPrincipal"
                         android:layout_width="90dp"
                         android:layout_height="85dp"
                         android:layout_gravity="center_horizontal"
